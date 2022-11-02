@@ -1,0 +1,3182 @@
+                       name: nwsppl300p.corpads.local;
+                       group: Server filesystem backup;
+                 backup type: ;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: BPDPPA300P.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa300p.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: db2ppa303p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna300t.corpads.local;
+                       group: MN_UNIX_NP_SASMNA300T;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasjca301pb;
+                       group: JC_INCR_FS01_FC_SAS_GPFS, 
+                              JC_UNIX_FS01_FC_MFULL_SAS_GPFS, 
+                              JC_UNIX_FS01_FC_WFULL_SAS_GPFS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: db2ppa303p.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsuedw03.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsprtl01.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSUEDW03.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: BPDPPA001H.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa001h.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: nwnjcl300p.corpads.local;
+                       group: Server filesystem backup;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: bpdppa001t.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rspcpd01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: nwnmnl300p.corpads.local;
+                       group: Server filesystem backup;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: rspsms01a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: BPDPPA500P.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspsem01b.corpads.local;
+                       group: MN_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa001d.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsdmpd01.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: nmnppl301p.corpads.local;
+                       group: NMC server;
+                 backup type: ;
+              backup command: savepsm.sh;
+              client OS type: Linux;
+
+                        name: BPDPPA001T.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspedw01.corpads.local;
+                       group: MN_DB_DB2_Test;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rspedw02.corpads.local;
+                       group: MN_DB_DB2_Test;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rspedw01.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00013.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: nmnmnl301p.corpads.local;
+                       group: Server filesystem backup;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: nwcppl300p.corpads.local;
+                       group: ;
+                 backup type: ;
+              backup command: savepsm.sh;
+              client OS type: Linux;
+
+                        name: nwnppl300p.corpads.local;
+                       group: Server filesystem backup;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: mfajca300p.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rspedw03.corpads.local;
+                       group: MN_DB_DB2_Test;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsprtl01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsdmpd01.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: didjca800pa.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00009.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: mfajca001d.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: bpdppa001u.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didjca800pa.corpads.local;
+                       group: JC_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: bpdppa500p.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rspmpi01b.corpads.local;
+                       group: MN_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edijca500pb.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00015.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bgdmna300p.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: bpdmna300p.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: eddjca500p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indjca001u.corpads.local;
+                       group: JC_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: didmna250ua.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indjca001t.corpads.local;
+                       group: JC_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: dsmmnanim01.corpads.local;
+                       group: MN_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00014.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: nwcppl300p.corpads.local;
+                       group: Server filesystem backup;
+                 backup type: ;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: IWSPPA001D.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wcsppa300p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUP00012.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdbpc03.corpads.local;
+                       group: MN_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edijca800pb.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indjca300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsppa001d.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00010.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: db2ppa301p.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00010.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsusep02.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdcpl01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rspcpd01.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstwcm01.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsgbps02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspcpw02.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: db2ppa300p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ORAJCA801PA.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: mfajca001d.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna250ub.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspmpi02b.corpads.local;
+                       group: MN_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsppsf01.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00014.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspsms02a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstsep01.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpippa501p.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpd01b.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpippa001d.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wamppa240d.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbps03.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca500pc.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsempd02.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250dc.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: db2ppa302p.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna400tc.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSDBPC01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasjca500pb;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infmna810pe.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250ub.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdbpc02.corpads.local;
+                       group: MN_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmmna300p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250da.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wcsppa301p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwps01a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: dsmjcanim01.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa355p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSUBPM01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspedm01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: orajca001d.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: oramna801pb.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: wcsppa302p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna400tb.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsmna301p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwcm02a.corpads.local;
+                       group: JC_UNIX_FS01_FC_INCR, JC_UNIX_FS01_FC_MFULL, 
+                              JC_UNIX_FS01_FC_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: eddjca301p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: iwsmna300p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwps03b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna400t.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsempt01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUD00012.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hpd00144.corpads.local;
+                       group: JC_LINUX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: rsuwps02.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwps02b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpe04.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrmna353p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: mfajca002d.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsptsm01.corpads.local;
+                       group: ;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: dsmjca001s.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00009.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwmna300p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: PDEMNA001D.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bgdmna300p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: save;
+              client OS type: AixOS;
+
+                        name: RSASEP01.bcbsnj.com;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bbljca300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: save -D9;
+              client OS type: AixOS;
+
+                        name: hup00017.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infmna810pc.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca500pa;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebpg01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasjca300pa;
+                       group: JC_UNIX_FS01_FC_INCR_SPL, 
+                              JC_UNIX_FS01_FC_MFULL_SPL, 
+                              JC_UNIX_FS01_FC_WFULL_SPL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdwps02.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsumpi02.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wasmna312p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsgbpd01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSUCPW01.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca251ta.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: eddmna200u.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: hup00018.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ORAMNA800PA.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00007.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00008.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsempd01.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: dsmmna003t.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup10029.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00022.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edijca800pc.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: DIDMNA001D.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna300tb.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didmna800pb.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa500p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSDBPM01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspcpd03.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: bpippa001u.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bprmna300p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspsep02a.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsppa202u.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdwcs02.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdpsl01.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa301p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00021.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspmpd02a.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna002d.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: dsmmna001s.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwcm01b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wasmna314p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wcsppa303p.corpads.local;
+                       group: JC_UNIX_FS01_FC_INCR, JC_UNIX_FS01_FC_MFULL, 
+                              JC_UNIX_FS01_FC_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: M1PVAP01.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstwcs02.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdwcs03.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsewps02.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwppa300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspcpw01.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wasppa313p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsppa302p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didjca800pb.corpads.local;
+                       group: JC_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: HUP10025.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00019.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indmna300p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSTWCS01.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna202d.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUP00001.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: dsmjca71img.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa002s.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: eddjca300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsjca101t.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsusdb02.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hpd00146.corpads.local;
+                       group: JC_LINUX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: sdsmna302p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsppsl01.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpn01a.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwcm02b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrmna354p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250sa.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa500p.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwps03a.corpads.local;
+                       group: JC_UNIX_FS01_FC_INCR, JC_UNIX_FS01_FC_MFULL, 
+                              JC_UNIX_FS01_FC_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: BPDPPA001D.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa001u.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rspbpn01c.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspmpt01.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ORAJCA800PB.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna001D.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwas01a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edijca800pf.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsewps03.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa501p.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rshbpm01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdsvr008.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUP00003.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wasmna310p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa001s.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bprppa001t.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didmna001t.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HPP11004.corpads.local;
+                       group: MN_LINUX_FS01_30days, MN_LINUX_FS01_MFULL_1Year;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: edijca800pa.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspmpi02a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infmna810pb.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUP00011.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ICAPPA300P.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspsms01b.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: mfamna300p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: iwsppa300p.corpads.local;
+                       group: PP_UNIX_FS01_INCR, PP_UNIX_FS01_MFULL, 
+                              PP_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: dsmmna71img.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ICAMNA300P.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsuedw01.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00011.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpippa301p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: SLDJCA300P.corpads.local;
+                       group: JC_UNIX_FS01_MFULL, JC_UNIX_FS01_WFULL, 
+                              JC_UNIX_FS01_INCR;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bblmna001d.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ICAPPA301p.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna800pd.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00024.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa001d.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00016.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwppa501p.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSUWCS02.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmmna301p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpippa001h.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsvcpw01.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsusdb01.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspmpm02b.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ITMPPA303P.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00020.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpm02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdpsh01.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdwps04.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwps01b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00006.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hpd00145.corpads.local;
+                       group: JC_LINUX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: HPP11003.corpads.local;
+                       group: JC_LINUX_FS01_MFULL_1Year, 
+                              LINUX_FS01_INCR_30_Days;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: RSSCPW01.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: eddmna301p.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: hup00023.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSABPM01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsppa101t.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa002d.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpd01c.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edijca800pe.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infmna810pf.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwas03a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsptsm02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wcsmna300p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ITMPPA301P.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00010.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpm01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsucpd01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: wasmna311p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsptim01.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspmpm02a.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wasppa312p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indjca001d.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa501p.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwppa001u.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna800pe.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: INFJCA810pA.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna800pa.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsvcpd01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00008.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwas01b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsgbps01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rshbps01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebpe02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpn01b.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HPD00147.corpads.local;
+                       group: JC_LINUX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: bpippa500p.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: itmppa302p.corpads.local;
+                       group: PP_FINAL_7Year_ONETIME;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwas02a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSABPD02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwcm01a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: iwsppa002d.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hld10110.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: tnmppa304p.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: ;
+
+                        name: RSDPSF01.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna250ta.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna500tb.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250sb.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna250tb.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wcsmna302p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wcsppa305p.corpads.local;
+                       group: JC_UNIX_FS01_FC_INCR, JC_UNIX_FS01_FC_MFULL, 
+                              JC_UNIX_FS01_FC_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00007.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdsep01.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstbpm01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwmna301p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebpe01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdbps01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpg02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa351p.corpads.local;
+                       group: PP_UNIX_FS01_INCR, PP_UNIX_FS01_MFULL, 
+                              PP_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa001s.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsewas01.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250uc.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rshbpd01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsppa301p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpippa001t.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infmna800pb.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasjca300pb;
+                       group: JC_UNIX_FS01_FC_INCR_SPL, 
+                              JC_UNIX_FS01_FC_MFULL_SPL, 
+                              JC_UNIX_FS01_FC_WFULL_SPL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspcpd02.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpd01.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdwps01.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: itmppa003d.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: eddmna300p.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -D5 -T oracle;
+              client OS type: AixOS;
+
+                        name: BPRPPA500P.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: mfajca300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsppsh01.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna800pc.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsmna303p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didmna250ub.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ORAMNA300P.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsuwps01.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpe03.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250db.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasjca500pa;
+                       group: JC_UNIX_FS01_FC_INCR_SPL, 
+                              JC_UNIX_FS01_FC_MFULL_SPL, 
+                              JC_UNIX_FS01_FC_WFULL_SPL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna500t.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsuwcs01.bcbsnj.com;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsusep01.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpg01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSABPI02.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstbpd01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasmna000D.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstsdb02.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00005.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna800pb.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasjca300pc.corpads.local;
+                       group: JC_UNIX_FS01_FC_INCR_SPL, 
+                              JC_UNIX_FS01_FC_MFULL_SPL, 
+                              JC_UNIX_FS01_FC_WFULL_SPL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwppa500p.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwppa001h.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna203d.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwppa001t.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hpp11002.corpads.local;
+                       group: MN_LINUX_FS01_30days, MN_LINUX_FS01_MFULL_1Year;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: bpippa300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa242u.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdsdb01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbps02.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna200d.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: EDIMNA201D.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: BPDPPA501P.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbps01.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebpd01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdbpd01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpm04.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna800pf.corpads.local;
+                       group: Copy of MN_UNIX_FS01_WFULL_EDI_F_GPFS, 
+                              MN_FS_UNIX_FS01_INCR_EDI_F_GPFS, 
+                              MN_FS_UNIX_FS01_MFULL_EDI_F_GPFS, 
+                              MN_UNIX_FS01_WFULL_EDI_F_GPFS, 
+                              Manual_Monthly_EDI_F_GPFS_FULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwas03b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstsdb01.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rsebps02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hpp11001;
+                       group: MN_LINUX_FS01_30days, MN_LINUX_FS01_MFULL_1Year;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: bprppa001u.corpads.local;
+                       group: PP_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: save -D5;
+              client OS type: AixOS;
+
+                        name: sdsppa201u.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspmpi01a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: oramna801pa.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rsuwcm01.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstbps01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: itmppa002d.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa001h.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpimna300p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250tb.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ORAMNA800PB.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00009.corpads.local;
+                       group: MN_UNIX_NP_FS05;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa001t.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bgimna300p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa356p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa301p.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: TNMPPA001D.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: ;
+
+                        name: bpimna301p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: itmppa300p.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsewas02.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didmna800pa.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdsvr001.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsgbpm01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: mfajca002d.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpm03.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsscpd01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sasjca301pa;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: itmppa001d.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00004.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edijca800pd.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdmna500p.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsptad01.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsewas03.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: BMCJCA001T.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HPD00148.corpads.local;
+                       group: JC_LINUX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: wcsppa304p.corpads.local;
+                       group: JC_UNIX_FS01_FC_INCR, JC_UNIX_FS01_FC_MFULL, 
+                              JC_UNIX_FS01_FC_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspsem01a.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebpn01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpwppa301p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdwcs01.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: eddmna300p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSUEDW02.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbps04.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSABPD01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infmna810pa.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa241u.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdwps03.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca251tb.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspbpe01.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wasmna313p.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wsrppa352p.corpads.local;
+                       group: PP_UNIX_FS01_INCR, PP_UNIX_FS01_MFULL, 
+                              PP_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: INFJCA810pb.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpmppa001u.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdset01.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsubps01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: tpgjca004d.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: INFMNA800PA.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUP00002.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: db2mna300p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsempt02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: RSUBPD01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdmna300p.corpads.local;
+                       group: MN_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didmna001d.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rsdedw01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca500pb.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdica01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hup00006.corpads.local;
+                       group: ;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdrtl01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00004.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebps01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdcpl01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: sdsjca303p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna250ua.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: wcsmna301p.corpads.local;
+                       group: MN_UNIX_NP_FS03;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didmna001t.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rspsep01a.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indjca001d.corpads.local;
+                       group: JC_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rspcpd03.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwps02a.corpads.local;
+                       group: JC_UNIX_FS01_FC_INCR, JC_UNIX_FS01_FC_MFULL, 
+                              JC_UNIX_FS01_FC_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didmna250ua.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: RSABPM02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsptsm03.corpads.local;
+                       group: ;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsempd01.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebpm01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: tnmmna305p.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: ;
+
+                        name: rspbpe02.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: nwkjca001t.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: bprppa300p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsebpm02.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250ua.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: didjca800pb.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infmna810pd.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: orajca001d.corpads.local;
+                       group: JC_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rstsdb02.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rspedw03.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bgmmna300p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca250ta.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspedw02.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: eddmna200u.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: tnmppa002d.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: ;
+
+                        name: hud00005.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00003.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdrtl01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsdmpw02.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: hud00002.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: tnmmna304p.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: ;
+
+                        name: eddmna301p.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsewps01.corpads.local;
+                       group: PP_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsucpd01.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: tnmppa305p.corpads.local;
+                       group: PP_UNIX_NP_FS04;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: ;
+
+                        name: rsumpi01.corpads.local;
+                       group: PP_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: infjca500pd.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUD00013.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdbpc03.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: BMCMNA001T.corpads.local;
+                       group: JC_DECOMM_Servers, MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: ;
+
+                        name: rsdsdb02.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indmna300p.corpads.local;
+                       group: MN_DB_ORA;
+                 backup type: Oracle;
+              backup command: nsrdasv -T oracle;
+              client OS type: AixOS;
+
+                        name: rsscpd01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsuedw02.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: hud00001.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa501p.corpads.local;
+                       group: PP_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsvcpd01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: indjca001t.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: db2ppa300p.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsuedw01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: rsdsvr006.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspedm01.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ORAJCA800PA.corpads.local;
+                       group: JC_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: dsmppanim01.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: HUP10025.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rspwas02b.corpads.local;
+                       group: MN_UNIX_FS02_INCR, MN_UNIX_FS02_MFULL, 
+                              MN_UNIX_FS02_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: SKLPPA200P.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: BPDPPA301P.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edijca500pa.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: indjca001u.corpads.local;
+                       group: JC_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rsdedw01.corpads.local;
+                       group: MN_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: infjca250ud.corpads.local;
+                       group: JC_UNIX_NP_FS02;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: oramna801pa.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: itmppa003d.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: nwkjca001t.corpads.local;
+                       group: Cloud_tier_tst, nwkjca001t_FC_GR;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: ITMPPA004D.corpads.local;
+                       group: PP_DECOMM_SERVERS;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: rstsdb01.corpads.local;
+                       group: MN_DECOMM_Servers;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdmna500p.corpads.local;
+                       group: MN_UNIX_NP_FS01;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: oramna801pb.corpads.local;
+                       group: MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: edimna800pf.corpads.local;
+                       group: MN_UNIX_FS01_INCR, MN_UNIX_FS01_MFULL, 
+                              MN_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+nsradmin> exit
+]0;pjangra@nwsppl300p:/home/pjangra[root@nwsppl300p pjangra]# exit
+exit
+]0;pjangra@nwsppl300p:~[pjangra@nwsppl300p ~]$ exit
+logout

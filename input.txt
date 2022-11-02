@@ -1,0 +1,24 @@
+Service name: WSDL 
+Service ID: 14234321885 
+Service resolution path: /gman/wsdlUpdte 
+Serivce endpoints: 
+-------------------------------------------------------------------------------- 
+Service name: DataService 
+Service ID: 419434324305 
+Service resolution path: /widgetDate_serv/WidgetDateServ 
+Serivce endpoints:  
+http://servername.company.com:1012/widgetDate_serv/WidgetDateServ
+-------------------------------------------------------------------------------- 
+Service name: SearchService 
+Service ID: 393234543546 
+Service resolution path: /ProxyServices/SearchService 
+Serivce endpoints:  
+http://servername.company.com:13010/Services/SearchService_5_0
+http://servername2.company.com:13010/Services/SearchService_5_0
+-------------------------------------------------------------------------------- 
+Service name: Worker 
+Service ID: 14187898547 
+Service resolution path: /ProxyServices/Worker 
+Serivce endpoints:  
+http://servername.company.com:131009/Services/Worker/v9
+--------------------------------------------------------------------------------

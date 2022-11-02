@@ -1,0 +1,11 @@
+#TYPE System.Management.Automation.PSCustomObject
+"vmId","vmName","vmSizeBytes","vmSize","registeredSourceId","registeredSourceName","datacenterName","hostName","protected","indexed"
+"19","vm_win1_old","48318382080","45.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","True","Fully-Indexed"
+"20","vmwin2_old","26843545600","25.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"
+"21","vmwin3_old","26843545600","25.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"
+"22","vmwin4","26843545600","25.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"
+"27","avamarproxy.its4u.com","22548578304","21.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"
+"28","networkerproxy.its4u.com","167772160000","156.25 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"
+"29","vmwin3","26843545600","25.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"
+"30","vmwin2","26843545600","25.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"
+"32","vmwin1","48318382080","45.00 GiB","9","server-b-win14.its4u.com","its4u.com","esx60.its4u.com","False","Not-Indexed"

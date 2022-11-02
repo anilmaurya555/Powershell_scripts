@@ -1,0 +1,25 @@
+                       name: nwsppl300p.corpads.local;
+                       group: Server filesystem backup;
+                 backup type: ;
+              backup command: ;
+              client OS type: Linux;
+
+                        name: BPDPPA300P.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;
+
+                        name: bpdppa300p.corpads.local;
+                       group: JC_DB_DB2;
+                 backup type: DB2;
+              backup command: nsrdasv -T db2;
+              client OS type: AixOS;
+
+                        name: db2ppa303p.corpads.local;
+                       group: JC_UNIX_FS01_INCR, JC_UNIX_FS01_MFULL, 
+                              JC_UNIX_FS01_WFULL;
+                 backup type: Filesystem;
+              backup command: ;
+              client OS type: AixOS;

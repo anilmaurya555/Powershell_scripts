@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
+<style>
+  .ui-tabs-anchor {
+    outline: none;
+  }
+</style>
+<script>
+window.onload = function() {
+var options1 = {
+	animationEnabled: true,
+	title: {
+		text: "Storage Consumption (in GB)"
+	},
+	axisX: {
+		labelFontSize: 14
+	},
+	axisY: {
+		labelFontSize: 14
+	},
+	data: [{
+		yValueFormatString: "#,### GB",
+		xValueFormatString: "YYYY-MM-DD",
+		type: "spline", //change it to line, area, bar, pie, etc
+		dataPoints: [{x: new Date(2020, 8, 11), y: 5},{x: new Date(2020, 8, 12), y: 7},{x: new Date(2020, 8, 13), y: 7},{x: new Date(2020, 8, 14), y: 8},{x: new Date(2020, 8, 15), y: 9},{x: new Date(2020, 8, 16), y: 12},{x: new Date(2020, 8, 17), y: 12},{x: new Date(2020, 8, 21), y: 16},{x: new Date(2020, 8, 22), y: 13},{x: new Date(2020, 8, 23), y: 12},{x: new Date(2020, 8, 24), y: 13},{x: new Date(2020, 8, 25), y: 18},{x: new Date(2020, 8, 28), y: 21},{x: new Date(2020, 8, 29), y: 21},{x: new Date(2020, 8, 30), y: 21},{x: new Date(2020, 9, 1), y: 21},{x: new Date(2020, 9, 6), y: 22},{x: new Date(2020, 9, 7), y: 21},{x: new Date(2020, 9, 9), y: 21},
+		]
+	}]};
+$("#tabs").tabs({
+	create: function (event, ui) {
+		//Render Charts after tabs have been created.
+		$("#chartContainer1").CanvasJSChart(options1);
+		//$("#chartContainer2").CanvasJSChart(options2);
+	},
+	activate: function (event, ui) {
+		//Updates the chart to its container size if it has changed.
+		ui.newPanel.children().first().CanvasJSChart().render();
+	}
+});
+}
+</script>
+</head>
+<body>
+<div id="tabs" style="height: 360px">
+<ul>
+<li ><a href="#tabs-1" style="font-size: 12px">cohesity651 (6892195503281359)</a></li>
+</ul>
+<div id="tabs-1" style="height: 300px">
+<div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+</div>
+</div>
+</div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>

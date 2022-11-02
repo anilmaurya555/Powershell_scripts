@@ -1,0 +1,45 @@
+C:\SQLADATA\MSSQL
+D:\SQLADATA\MSSQL
+D:\MSSQL\DATA
+E:\SQLADATA\MSSQL
+F:\SQLADATA\MSSQL
+L:\SQLADATA\MSSQL
+M:\SQLADATA\MSSQL
+C:\SQLADATA\MSSQL\DATA
+D:\SQLADATA\MSSQL\DATA
+E:\SQLADATA\MSSQL\DATA
+F:\SQLADATA\MSSQL\DATA
+L:\SQLADATA\MSSQL\DATA
+M:\SQLADATA\MSSQL\DATA
+C:\DATA01\MSSQL\DATA
+D:\DATA01\MSSQL\DATA
+E:\DATA01\MSSQL\DATA
+F:\DATA01\MSSQL\DATA
+L:\DATA01\MSSQL\DATA
+M:\DATA01\MSSQL\DATA
+C:\LOGS01\MSSQL\TRANS_LOGS
+D:\LOGS01\MSSQL\TRANS_LOGS
+E:\LOGS01\MSSQL\TRANS_LOGS
+F:\LOGS01\MSSQL\TRANS_LOGS
+L:\LOGS01\MSSQL\TRANS_LOGS
+M:\LOGS01\MSSQL\TRANS_LOGS
+T:\MSSQL\DATA
+E:\MSSQL\TRANS_LOGS
+C:\Program Files\Microsoft SQL Server
+H:\Test
+G:\DATA
+C:\Windows\System32
+C:\Windows\Temp
+C:\ProgramData\Symantec
+C:\Users\Administrator\AppData\Local\Microsoft\Windows
+C:\Windows\appcompat\Programs
+C:\Windows\ServiceProfiles
+C:\ProgramData\Microsoft\Windows Defender
+C:\Users
+C:\Windows\security
+C:\adsm.sys
+C:\pagefile.sys
+C:\Boot
+C:\bootmgr
+C:\ProgramData\Symantec
+C:\Program Files (x86)\Symantec

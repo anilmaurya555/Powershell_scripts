@@ -1,0 +1,37 @@
+
+====================================
+validateVMBackups.ps1
+$title = "VM Backup Validation Report ($($cluster.name))"
+$html += $title
+
+======================================
+### format output
+$resultTable = $results | ForEach-Object { [pscustomobject] $_ } | Format-Table | Out-String
+$resultTable
+$resultTable = $resultTable.Replace("`n","<br/>").Replace(" ","&nbsp;")
+$resultHTML='<html><div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><code>' + $resultTable + '</code></div></html>'
+$resultHTML=$resultHTML.Replace('Check&nbsp;Failed','<span style="color:#ff0000;">Check Failed</span>')
+$resultHTML=$resultHTML.Replace('Text&nbsp;Mismatch','<span style="color:#ff0000;">Text Mismatch</span>')
+$resultHTML=$resultHTML.Replace('Violated','<span style="color:#ff0000;">Violated</span>')
+### send email report
+Send-MailMessage -From $sendFrom -To $sendTo -SmtpServer $smtpServer -Port $smtpPort -Subject "backupValidationReport" -BodyAsHtml $resultHTML 
+===========================
+run chargebackReport.ps1
+===========================
+restoreReport.ps1
+<td>$($restore.restoreTask.performRestoreTaskState.base.user)</td>
+
+=======================
+smtpReport.ps1
+========================
+storageChart.ps1
+===============
+storageReport.ps1
+==================
+validateADBackup.ps1
+===============
+validateServerBackup.ps1
+====================
+validateVMBackups.ps1
+====================
+

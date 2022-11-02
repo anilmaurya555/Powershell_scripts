@@ -1,0 +1,2 @@
+win_bkp_1
+vm_image_22
