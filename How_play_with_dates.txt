@@ -257,3 +257,5 @@ target            : @{type=kRemote; replicationTarget=}
 error             : RPC to remote cluster chyuswpccp01 failed with error [kRejected]: Replication from Tx cluster 4470993546666972 is not enabled on the remote cluster
 
 ====================
+$starttime = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - ($day * 86400000000)
+==================
