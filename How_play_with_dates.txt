@@ -319,4 +319,12 @@ PS C:\anil\scripts> dateToUsecs '2022-01-01'
 1641016800000000
 
 PS C:\anil\scripts> 
+PS C:\anil\scripts> dateToUsecs '2021-01-01'
+1609480800000000
+PS C:\anil\scripts> dateToUsecs '2021-01-02'
+1609567200000000
+PS C:\anil\scripts> $runs = (api get protectionRuns?jobId=1217814`&numRuns=999999`&excludeTasks=true`&excludeNonRestoreableRuns=true`&startTimeUsecs=1609480800000000`&endTimeUsecs=1609567200000000)|Where-Object {$_.backupRun.snapshotsDeleted -eq $false}
+PS C:\anil\scripts> $runs.backuprun.stats.startTimeUsecs| ForEach-Object {usecsToDate $_}
+Friday, January 1, 2021 8:30:00 PM
+PS C:\anil\scripts> 
 =============================================
