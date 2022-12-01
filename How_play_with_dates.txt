@@ -259,3 +259,20 @@ error             : RPC to remote cluster chyuswpccp01 failed with error [kRejec
 ====================
 $starttime = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - ($day * 86400000000)
 ==================
+#################get all startTimeusecs ##################3
+$lastusecs = @()
+$today = Get-Date
+
+$7dayusec = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - (7 * 86400000000)
+$6dayusec = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - (6 * 86400000000)
+$5dayusec = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - (5 * 86400000000)
+$4dayusec = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - (4 * 86400000000)
+$3dayusec = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - (3 * 86400000000)
+$2dayusec = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - (2 * 86400000000)
+$ldayusec = [int64](((Get-Date).ToUniversalTime())-([datetime]"1970-01-01 00:00:00")).TotalSeconds*1000000 - 86400000000
+#$ldayusec = dateToUsecs ($today.Date) - 86400000000
+       $lastusecs = ( "$ldayusec","$2dayusec","$3dayusec","$4dayusec","$5dayusec","$6dayusec","7dayusec")
+       #$lastusecs = ( "$ldayusec","$2dayusec","$3dayusec","$4dayusec","$5dayusec","$6dayusec")
+       #$lastusecs = ( "$8dayusec")
+       #$lastusecs = ( "$ldayusec")
+##########################################################
