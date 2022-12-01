@@ -198,3 +198,14 @@ Where-Object { $_.backupRun.snapshotsDeleted -eq $false } | `
 Where-Object { !('kArchival' -in $_.copyRun.target.type) -or ($_.copyRun | Where-Object { $_.target.type -eq 'kArchival' -and $_.status -in @('kCanceled','kFailed') }) } | `
 Sort-Object -Property @{Expression = { $_.copyRun[0].runStartTimeUsecs }; Ascending = $True }
 #########################3
+PS C:\anil\scripts> $runs = (api get protectionRuns?jobId=1217814`&numRuns=999999`&excludeTasks=true`&excludeNonRestoreableRuns=true`&startTimeUsecs=1609480800000000)|Where-Object {$_.backupRun.snapshotsDeleted -eq $false}
+PS C:\anil\scripts> $runs.backuprun.stats.startTimeUsecs
+1645669800346975
+1645324201019924
+1644633002079772
+PS C:\anil\scripts> $runs.backuprun.stats.startTimeUsecs| ForEach-Object {usecsToDate $_}
+
+Wednesday, February 23, 2022 8:30:00 PM
+Saturday, February 19, 2022 8:30:01 PM
+Friday, February 11, 2022 8:30:02 PM
+Friday, January 14, 2022 8:30:00 PM
