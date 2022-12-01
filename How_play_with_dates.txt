@@ -187,5 +187,9 @@ $lastfriday= Get-LastFridayOfMonth(Get-Date)
                 $html | Out-File -FilePath "StorageReport_$($clustername)_$fileDate.html"
                  
                 }
-####
-
+#####################
+$runs = (api get protectionRuns?jobId=$($job.id)`&excludeTasks=true`&excludeNonRestoreableRuns=true`&numRuns=999999`&runTypes=kRegular`&endTimeUsecs=$olderThanUsecs) | `
+        Where-Object { $_.copyRun[0].runStartTimeUsecs -le $olderThanUsecs } | `
+        Where-Object { 'kArchival' -in $_.copyRun.target.type } | `
+        Sort-Object -Property @{Expression = { $_.copyRun[0].runStartTimeUsecs }; Ascending = $True }
+##########################
