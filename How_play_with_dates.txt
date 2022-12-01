@@ -209,3 +209,51 @@ Wednesday, February 23, 2022 8:30:00 PM
 Saturday, February 19, 2022 8:30:01 PM
 Friday, February 11, 2022 8:30:02 PM
 Friday, January 14, 2022 8:30:00 PM
+PS C:\anil\scripts> $runs.backuprun.stats
+
+
+startTimeUsecs               : 1645669800346975
+endTimeUsecs                 : 1645696101525835
+totalSourceSizeBytes         : 16546361507840
+totalBytesReadFromSource     : 468750434304
+totalLogicalBackupSizeBytes  : 16546361507840
+totalPhysicalBackupSizeBytes : 158626364731
+numSuccessfulAppObjects      : 0
+numFailedAppObjects          : 0
+numCancelledAppObjects       : 0
+numSuccessfulTasks           : 54
+numFailedTasks               : 0
+numCanceledTasks             : 0
+
+
+PS C:\anil\scripts> $runs.backuprun.stats.endTimeUsecs| ForEach-Object {usecsToDate $_}
+
+Thursday, February 24, 2022 3:48:21 AM
+
+
+
+PS C:\anil\scripts> $runs.backuprun.stats.startTimeUsecs| ForEach-Object {usecsToDate $_}
+
+Wednesday, February 23, 2022 8:30:00 PM
+
+
+
+PS C:\anil\scripts> 
+PS C:\anil\scripts> 
+PS C:\anil\scripts> $runs.copyrun
+
+
+taskUid             : @{id=230583337968; clusterId=4470993546666972; clusterIncarnationId=1521903461124}
+runStartTimeUsecs   : 1645669800346975
+expiryTimeUsecs     : 1742896102525864
+status              : kSuccess
+target              : @{type=kLocal}
+holdForLegalPurpose : False
+
+taskUid           : @{id=230392482986; clusterId=4470993546666972; clusterIncarnationId=1521903461124}
+runStartTimeUsecs : 1645669800346975
+status            : kSuccess
+target            : @{type=kRemote; replicationTarget=}
+error             : RPC to remote cluster chyuswpccp01 failed with error [kRejected]: Replication from Tx cluster 4470993546666972 is not enabled on the remote cluster
+
+====================
