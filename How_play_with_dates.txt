@@ -1,0 +1,191 @@
+Anil Maurya's Journal Entry
+
+Created: 02/26 04:12 PM
+Modified: 12/01 01:05 PM	
+	Title:
+	
+	Category:
+	Cohesity powershell scripts
+	
+	Diary date:
+	
+	
+
+
+$today = get-date
+$today
+Friday, February 26, 2021 4:09:52 PM
+
+$fileDate = $today.ToString('yyyy-MM-dd')
+$filedate
+2021-02-26
+$todayUsecs = dateToUsecs (get-date -Date $today -Hour 0 -Minute 0 -Second 0 -Millisecond 0).AddMilliseconds(-1)
+$todayUsecs
+1614315600000000
+$lastWeek = get-date -Date $today.AddDays(-7) -Hour 0 -Minute 0 -Second 0 -Millisecond 0
+$lastWeek
+Friday, February 19, 2021 12:00:00 AM
+$lastWeekUsecs = dateToUsecs $lastWeek
+$lastWeekUsecs
+1613710800000000
+$reportDays = for ($i = $lastWeek; $i -le $today; $i=$i.AddDays(1)){$i.ToString('MM-dd')}
+$reportDays
+02-19
+02-20
+02-21
+02-22
+02-23
+02-24
+02-25
+02-26 
+$reportDays = @()
+$reportDates = @()
+for ($i = $lastWeek; $i -le $today; $i=$i.AddDays(1)){
+    $reportDays += $i.ToString('MM-dd')
+    $reportDates += $i
+}
+$reportDays
+02-19
+02-20
+02-21
+02-22
+02-23
+02-24
+02-25
+02-26 
+$reportDates 
+Friday, February 19, 2021 12:00:00 AM
+Saturday, February 20, 2021 12:00:00 AM
+Sunday, February 21, 2021 12:00:00 AM
+Monday, February 22, 2021 12:00:00 AM
+Tuesday, February 23, 2021 12:00:00 AM
+Wednesday, February 24, 2021 12:00:00 AM
+Thursday, February 25, 2021 12:00:00 AM
+Friday, February 26, 2021 12:00:00 AM 
+=============
+$24hoursAgo = dateToUsecs (get-date).AddHours(-24)
+$now = dateToUsecs (get-date)
+$todayMsecs = (dateToUsecs (Get-Date))/1000
+$daysAgoMsecs = (dateToUsecs ((Get-Date).AddDays(-$days)))/1000
+$daysBackUsecs = dateToUsecs (get-date -Hour 0 -Minute 00).AddDays(-$daysBack)
+$endUsecs = dateToUsecs (Get-Date -Hour 0 -Minute 00)
+$last24Hours = dateToUsecs ((get-date).AddDays(-1))
+$lastXDays = dateToUsecs ((get-date).AddDays(-$daysBack))
+
+$now = Get-Date
+$midnight = Get-Date -Hour 0 -Minute 0 -Second 0
+$yesterday = $midnight.AddDays(-1)
+$nowUsecs = dateToUsecs $now
+$midnightUsecs = dateToUsecs $midnight
+$yesterdayUsecs = dateToUsecs $yesterday
+
+$endDate = get-date
+$startDate = $endDate.AddDays(-$days)
+$startDateMsecs = (dateToUsecs $startDate)/1000
+$endDateMsecs = (dateToUsecs $endDate)/1000
+
+$start = (usecsToDate $uStart).ToString('yyyy-MM-dd')
+$end = (usecsToDate $uEnd).ToString('yyyy-MM-dd')
+$title = "Restore Report ($start - $end)"
+$date = (get-date).ToString()
+
+$daysBackUsecs = dateToUsecs (get-date).AddDays(-$daysBack)
+$endUsecs = dateToUsecs (Get-Date)
+ if($endUsecs -le $daysBackUsecs){
+            break
+        }
+
+=================================================
+ [Parameter(Mandatory = $True)][string]$daysToKeep,
+ if ($startdateusecs -lt $(timeAgo $daysToKeep days) ) {
+==================================================
+
+===============================
+$logUsecsDayStart = [int64] (dateToUsecs (get-date $logTime).Date) 
+$logUsecsDayEnd = [int64] (dateToUsecs (get-date $logTime).Date.AddDays(1).AddSeconds(-1))
+}elseif($latest){
+$logUsecsDayStart = [int64]( dateToUsecs (get-date).AddDays(-3))
+$logUsecsDayEnd = [int64]( dateToUsecs (get-date))
+===================================
+[Parameter()][int]$days = 7
+1..$days | ForEach-Object {
+$thisDay = $today.AddDays(-$_)
+$thisDayUsecs = dateToUsecs $thisDay
+$nextDay = $today.AddDays(-$_+1)
+$nexDayUsecs = dateToUsecs $nextDay
+$year = $thisDay.Year
+$month = $thisDay.Month.ToString("00")
+$monthday = $thisDay.Day.ToString("00")
+======================================
+[Parameter(Mandatory = $True)][string]$daysToKeep,
+
+-==========
+-startDate: (optional) start of date range to report on (e.g. -startDate '2019-08-01')
+-endDate: (optional) end of date range to report on (e.g. -endDate '2019-09-01')
+[Parameter()][string]$startDate = '',
+[Parameter()][string]$endDate = '',
+
+# determine start and end dates
+$today = Get-Date
+
+if($startDate -ne '' -and $endDate -ne ''){
+$uStart = dateToUsecs $startDate
+$uEnd = dateToUsecs $endDate
+}elseif ($lastXDays -ne 0) {
+$uStart = dateToUsecs ($today.Date.AddDays(-$lastXDays))
+$uEnd = dateToUsecs $today.Date.AddSeconds(-1)
+}elseif ($lastCalendarMonth) {
+$uStart = dateToUsecs ($today.Date.AddDays(-($today.day-1)).AddMonths(-1))
+$uEnd = dateToUsecs ($today.Date.AddDays(-($today.day-1)).AddSeconds(-1))
+}else{
+$uStart = dateToUsecs ($today.Date.AddDays(-31))
+$uEnd = dateToUsecs $today.Date.AddSeconds(-1)
+}
+
+$start = (usecsToDate $uStart).ToString('yyyy-MM-dd')
+$end = (usecsToDate $uEnd).ToString('yyyy-MM-dd')
+
+$startingDate = usecsToDate (dateToUsecs $start)
+$endingDate = usecsToDate (dateToUsecs $end)
+============================================
+[Parameter(Mandatory)][int64]$daysToKeep, #new retention (from backup date)
+$newExpireTimeUsecs = $startTimeUsecs + ($daysToKeep * 86400000000)
+$daysToExtend = [int64][math]::Round(($newExpireTimeUsecs - $currentExpireTimeUsecs) / 86400000000)
+
+<#
+PS C:\Users\postm> $lastDay = new-object DateTime((get-date).Year, (get-date).Month, [DateTime]::DaysInMonth((get-date).Year, (get-date).Month))
+PS C:\Users\postm> $lastDay
+Wednesday, November 30, 2022 12:00:00 AM
+PS C:\Users\postm> [int] [DayOfWeek]::Friday
+5
+PS C:\Users\postm> [int] $lastDay.DayOfWeek
+3
+PS C:\Users\postm> Get-Date
+Thursday, November 24, 2022 9:34:13 AM
+PS C:\Users\postm> $lastDay.AddDays(- (7-2))
+Friday, November 25, 2022 12:00:00 AM
+PS C:\Users\postm> $lastDay.AddDays(0)
+Wednesday, November 30, 2022 12:00:00 AM
+PS C:\Users\postm> 
+#>
+function Get-LastFridayOfMonth([DateTime] $d) {
+    $lastDay = new-object DateTime($d.Year, $d.Month, [DateTime]::DaysInMonth($d.Year, $d.Month)) 
+    $diff = ([int] [DayOfWeek]::Friday) - ([int] $lastDay.DayOfWeek)
+    if ($diff -ge 0) {
+        return $lastDay.AddDays(- (7-$diff))
+    }
+    else
+    {
+        return $lastDay.AddDays($diff)
+    }
+}
+
+##whether today is last friday of month
+####
+$lastfriday= Get-LastFridayOfMonth(Get-Date)
+      if ( (get-date "$lastfriday" -format yyyy-M-dd) -eq (Get-Date -format yyyy-M-dd)){
+                $html | Out-File -FilePath "StorageReport_$($clustername)_$fileDate.html"
+                 
+                }
+####
+
