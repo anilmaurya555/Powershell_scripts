@@ -193,3 +193,8 @@ $runs = (api get protectionRuns?jobId=$($job.id)`&excludeTasks=true`&excludeNonR
         Where-Object { 'kArchival' -in $_.copyRun.target.type } | `
         Sort-Object -Property @{Expression = { $_.copyRun[0].runStartTimeUsecs }; Ascending = $True }
 ##########################
+$runs = (api get protectionRuns?jobId=$($job.id)`&numRuns=9999`&runTypes=kRegular`&runTypes=kFull`&excludeTasks=true`&startTimeUsecs=$searchTimeUsecs) | `
+Where-Object { $_.backupRun.snapshotsDeleted -eq $false } | `
+Where-Object { !('kArchival' -in $_.copyRun.target.type) -or ($_.copyRun | Where-Object { $_.target.type -eq 'kArchival' -and $_.status -in @('kCanceled','kFailed') }) } | `
+Sort-Object -Property @{Expression = { $_.copyRun[0].runStartTimeUsecs }; Ascending = $True }
+#########################3
