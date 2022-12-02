@@ -341,3 +341,14 @@ $monthday = $thisDay.Day.ToString("00")
 $thisDayString = "$year-$month-$monthday"
 $thisDayVersions = $versions | Where-Object { ($_.instanceId.jobStartTimeUsecs -ge $thisDayUsecs) -and ($_.instanceId.jobStartTimeUsecs -le $nexDayUsecs) }
 ======================
+PS C:\anil\scripts> $runs = (api get protectionRuns?jobId=1217814`&numRuns=999999`&excludeTasks=true`&excludeNonRestoreableRuns=true)|Where-Object {$_.backupRun.snapshotsDeleted -eq $false}|Where-Object {($_.backuprun.stats.startTimeUsecs -ge "1641016800000000" -and $_.backuprun.stats.startTimeUsecs -le "1641103200000000") -or ($_.backuprun.stats.startTimeUsecs -ge "1609480800000000" -and $_.backuprun.stats.startTimeUsecs -le "1609567200000000") -or ($_.backuprun.stats.startTimeUsecs -ge "1577858400000000" -and $_.backuprun.stats.startTimeUsecs -le "1577944800000000") }
+
+PS C:\anil\scripts> $runs.backuprun.stats.startTimeUsecs| ForEach-Object {usecsToDate $_}
+
+Saturday, January 1, 2022 8:30:00 PM
+Friday, January 1, 2021 8:30:00 PM
+
+
+
+PS C:\anil\scripts> 
+==============================
