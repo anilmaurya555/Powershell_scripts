@@ -328,3 +328,16 @@ PS C:\anil\scripts> $runs.backuprun.stats.startTimeUsecs| ForEach-Object {usecsT
 Friday, January 1, 2021 8:30:00 PM
 PS C:\anil\scripts> 
 =============================================
+[Parameter()][int]$days = 7
+$today = Get-Date
+1..$days | ForEach-Object {
+$thisDay = $today.AddDays(-$_)
+$thisDayUsecs = dateToUsecs $thisDay
+$nextDay = $today.AddDays(-$_+1)
+$nexDayUsecs = dateToUsecs $nextDay
+$year = $thisDay.Year
+$month = $thisDay.Month.ToString("00")
+$monthday = $thisDay.Day.ToString("00")
+$thisDayString = "$year-$month-$monthday"
+$thisDayVersions = $versions | Where-Object { ($_.instanceId.jobStartTimeUsecs -ge $thisDayUsecs) -and ($_.instanceId.jobStartTimeUsecs -le $nexDayUsecs) }
+======================
