@@ -352,3 +352,11 @@ Friday, January 1, 2021 8:30:00 PM
 
 PS C:\anil\scripts> 
 ==============================
+$today = get-date
+$fileDate = $today.ToString('yyyy-MM-dd')
+
+$todayUsecs = dateToUsecs (get-date -Date $today -Hour 0 -Minute 0 -Second 0 -Millisecond 0).AddMilliseconds(-1)
+$lastWeek = get-date -Date $today.AddDays(-7) -Hour 0 -Minute 0 -Second 0 -Millisecond 0
+$lastWeekUsecs = dateToUsecs $lastWeek
+$reportDays = for ($i = $lastWeek; $i -le $today; $i=$i.AddDays(1)){$i.ToString('MM-dd')}
+============================
