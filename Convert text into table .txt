@@ -1,0 +1,63 @@
+Tested worked
+
+============================================================
+ $lines = get-content c:\anil\scripts\input.txt
+
+$ci = New-Object System.Collections.CaseInsensitiveComparer
+$newlines = New-Object System.Collections.Hashtable( $null, $ci )
+
+$table = New-Object System.Collections.Hashtable( $null, $ci )
+$newlines = @()
+foreach ( $line in $lines){
+             
+             $newlines += $line
+
+             if ($line.contains('client OS type')) {
+                          
+                          $newlines += $line
+                          
+                          foreach ($newline in $newlines){
+                                                if ( $newline.contains('name')){
+                                                                     $name=$newline.split(":")[1].trim(";")
+                                                                                }
+                                                if ( $newline.contains('group')){
+                                                                     $group=$newline.split(":")[1].trim(";")
+                                                                       
+                                                                     }
+                                                if (! $newline.contains(':')){
+
+                                                                      $group += $newline.trim(";").trim()
+                                                                               }
+                                                if ( $newline.contains('backup type')){
+                                                                      $backuptype=$newline.split(":")[1].trim(";")
+                                                                      }
+                                                if ( $newline.contains('client OS type')){
+                                                                      $ostype=$newline.split(":")[1].trim(";")
+                                                                      }
+                                                if ( $newline.contains('command')){
+                                                                      $cmd=$newline.split(":")[1].trim(";")
+                                                                      }      
+                                                                                                        
+                                                              if ( $newline.contains('client OS type')){
+                                                                                         
+
+                                                                                                    $table[$name] = @{}
+                                                                                                    $table[$name]['group'] = $group
+                                                                                                    $table[$name]['backuptype'] = $backuptype
+                                                                                                    $table[$name]['ostype'] = $ostype
+                                                                                                    $table[$name]['cmd'] = $cmd
+                                                                                                    }
+
+
+                                                                            $newlines = @()                                                         
+
+                                                                            }
+                            }
+                            }
+                                                        
+                            $table.GetEnumerator() | ForEach-Object{
+                                                    "{0,-25}:{1,-25}:{2,-20}:{3,-10}:{4,20}" -f ($_.name, $_.Value.group, $_.value.backuptype,$_.value.ostype,$_.value.cmd)
+                                                    }
+
+ =============================
+
