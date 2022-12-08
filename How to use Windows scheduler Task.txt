@@ -1,0 +1,10 @@
+Use this in Scheduler Task
+-command "&{d:\cohesity_scripts\summary_rep.ps1 -username amaurya  -smtpServer 10.17.20.46 -sendTo anil_maurya@horizonblue.com -sendFrom NWSMNW300P@horizonblue.com}"
+
+-command "&{d:\cohesity_scripts\summary_rep.ps1 -username amaurya  -smtpServer 10.17.20.46 -sendTo cohesity_admins@horizonblue.com,Nalanda_Vemireddy@horizonblue.com -sendFrom NWSMNW300P@horizonblue.com}"
+D:\cohesity_scripts
+============================================
+
+Below for testing in Command prompot
+C:\Users\C75883PA>powershell.exe -command "&{d:\cohesity_scripts\daily_sql_statusreport_email.ps1 -vip hcohesity04 -username cohesity_rep -domain corpads.local -smtpServer 10.17.20
+.46 -prefix sql -sendTo anil_maurya@horizonblue.com -sendFrom NWSMNW300P@horizonblue.com}"
