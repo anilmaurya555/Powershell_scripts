@@ -360,3 +360,5 @@ $lastWeek = get-date -Date $today.AddDays(-7) -Hour 0 -Minute 0 -Second 0 -Milli
 $lastWeekUsecs = dateToUsecs $lastWeek
 $reportDays = for ($i = $lastWeek; $i -le $today; $i=$i.AddDays(1)){$i.ToString('MM-dd')}
 ============================
+if(($version.instanceId.jobStartTimeUsecs -lt $olderThanUsecs) -or ($version.instanceId.jobStartTimeUsecs -le $uEnd -and $version.instanceId.jobStartTimeUsecs -ge $uStart))
+==============================
