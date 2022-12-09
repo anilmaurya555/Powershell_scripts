@@ -18,13 +18,18 @@ param (
     [Parameter()][array]$serverName,  # optional names of vms to expunge (comma separated)
     [Parameter()][string]$serverlist = '',  # optional textfile of vms to expunge (one per line)
     [Parameter()][string]$jobName,
+    [Parameter()][string]$startDate = '',   # start of date range to report on (e.g. -startDate '2019-08-01')
+    [Parameter()][string]$endDate = '',     #end of date range to report on (e.g. -endDate '2019-09-01')
     [Parameter()][string]$tenantId = $null,
-    [Parameter()][int]$olderThan = 0,
+    [Parameter()][int]$olderThan  ,
     [Parameter()][switch]$delete # delete or just a test run
 )
 
 # source the cohesity-api helper code
 . $(Join-Path -Path $PSScriptRoot -ChildPath cohesity-api.ps1)
+if ($startDate -and $endDate){
+$uStart = dateToUsecs $startDate
+$uEnd = dateToUsecs $endDate }
 
 # authenticate
 apiauth -vip $vip -username $username -domain $domain -password $password -tenantId $tenantId.ToUpper()
@@ -77,8 +82,9 @@ else {
 }
 
 $remoteClusters = @()
-
+if($olderThan){
 $olderThanUsecs = dateToUsecs (get-date).AddDays(-$olderThan)
+}
 
 foreach($vName in $vms){
     $vName = [string]$vName
@@ -90,7 +96,7 @@ foreach($vName in $vms){
         $doc = $vm.vmDocument
         if((! $jobName) -or $jobName -eq $doc.jobName){
             foreach($version in $doc.versions){
-                if($version.instanceId.jobStartTimeUsecs -lt $olderThanUsecs){
+                if(($version.instanceId.jobStartTimeUsecs -lt $olderThanUsecs) -or ($version.instanceId.jobStartTimeUsecs -le $uEnd -and $version.instanceId.jobStartTimeUsecs -ge $uStart)){   # here checking date
                     $canDelete = $false
                     $runParameters = @{
                         "jobRuns" = @(
@@ -142,7 +148,7 @@ foreach($vName in $vms){
                             log ("found {0} in {1} ({2})" -f $vName, $($doc.jobName), $(usecsToDate $version.instanceId.jobStartTimeUsecs))
                         }
                     }
-                }
+                }    # here it stops compairing date
             }
         }
     }
