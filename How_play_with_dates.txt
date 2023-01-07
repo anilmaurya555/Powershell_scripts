@@ -362,3 +362,9 @@ $reportDays = for ($i = $lastWeek; $i -le $today; $i=$i.AddDays(1)){$i.ToString(
 ============================
 if(($version.instanceId.jobStartTimeUsecs -lt $olderThanUsecs) -or ($version.instanceId.jobStartTimeUsecs -le $uEnd -and $version.instanceId.jobStartTimeUsecs -ge $uStart))
 ==============================
+            $dt = (usecsToDate $t.startTimeUsecs).Tostring().replace(' ','-').replace('/','-').replace(':','-')
+            $clusterstats[$vip]['starttime'] = $dt
+    "chyusnpccp03":  {
+                         "starttime":  "1-6-2023-9-00-00-PM",
+                         "jobname":  "NPC Netapp napsdccp137v_prod"
+================================
