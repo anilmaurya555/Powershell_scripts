@@ -1,0 +1,145 @@
+PS C:\temp> $dollors[1]
+77
+
+PS C:\temp> .\testing.ps1
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator() | Where-Object {.Value.Balls}).Count
+2
+.PSBase.Keys.Where{[]['balls']}.Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+3
+
+PS C:\temp> .\testing.ps1
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator() | Where-Object {.Value.Balls}).Count
+2
+.PSBase.Keys.Where{[]['balls']}.Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+3
+anil 56
+raju 56
+
+PS C:\temp> .\testing.ps1
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator() | Where-Object {.Value.Balls}).Count
+2
+.PSBase.Keys.Where{[]['balls']}.Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+3
+anil 56
+raju 56
+{
+    "school":  {
+                   "name":  "Lincoln High School",
+                   "levels":  [
+                                  "9",
+                                  "10",
+                                  "11",
+                                  "12"
+                              ]
+               },
+    "sports":  {
+                   "fishing":  {
+                                   "season":  "fall",
+                                   "coed":  "h",
+                                   "balls":  true
+                               },
+                   "lacrosse":  {
+                                    "season":  "spring",
+                                    "coed":  "g",
+                                    "balls":  true
+                                },
+                   "swim":  {
+                                "season":  "winter",
+                                "coed":  "c",
+                                "balls":  false
+                            },
+                   "football":  {
+                                    "season":  "fall",
+                                    "coed":  "b",
+                                    "balls":  true
+                                },
+                   "hockey":  {
+                                  "season":  "winter",
+                                  "coed":  "b",
+                                  "balls":  false
+                              },
+                   "cycling":  {
+                                   "season":  "fall",
+                                   "coed":  "h",
+                                   "balls":  true,
+                                   "clients":  "System.Collections.Hashtable"
+                               }
+               }
+}
+
+PS C:\temp> 
+PS C:\temp> 
+PS C:\temp> 
+PS C:\temp> 
+PS C:\temp> .\testing.ps1
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator() | Where-Object {.Value.Balls}).Count
+2
+.PSBase.Keys.Where{[]['balls']}.Count
+2
+(System.Collections.Hashtable['sports'].GetEnumerator().Where{.Value.Balls}).Count
+3
+anil 56
+raju 56
+{
+    "school":  {
+                   "name":  "Lincoln High School",
+                   "levels":  [
+                                  "9",
+                                  "10",
+                                  "11",
+                                  "12"
+                              ]
+               },
+    "sports":  {
+                   "fishing":  {
+                                   "season":  "fall",
+                                   "coed":  "h",
+                                   "balls":  true
+                               },
+                   "lacrosse":  {
+                                    "season":  "spring",
+                                    "coed":  "g",
+                                    "balls":  true
+                                },
+                   "swim":  {
+                                "season":  "winter",
+                                "coed":  "c",
+                                "balls":  false
+                            },
+                   "football":  {
+                                    "season":  "fall",
+                                    "coed":  "b",
+                                    "balls":  true
+                                },
+                   "hockey":  {
+                                  "season":  "winter",
+                                  "coed":  "b",
+                                  "balls":  false
+                              },
+                   "cycling":  {
+                                   "season":  "fall",
+                                   "coed":  "h",
+                                   "balls":  true,
+                                   "clients":  {
+                                                   "anil":  "56",
+                                                   "raju":  "56"
+                                               }
+                               }
+               }
+}
+
+PS C:\temp> 
