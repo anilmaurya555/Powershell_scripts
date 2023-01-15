@@ -7,6 +7,7 @@
 #                  -sendTo myuser@mydomain.net, anotheruser@mydomain.net `
 #                  -smtpServer 192.168.1.95 `
 #                  -sendFrom backupreport@mydomain.net
+# weekly summary report
 
 ### process commandline arguments
 [CmdletBinding()]
