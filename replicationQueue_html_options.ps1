@@ -1,4 +1,4 @@
-﻿### process commandline arguments
+ ### process commandline arguments
 [CmdletBinding()]
 param (
     [Parameter()][array]$vips,
@@ -132,14 +132,12 @@ $html = '<html>
             64iLlEjZk8aaIETyZb3Rw9Y3oah/Rp42KDhHqj3v18hKy9AZ+u6Sjzs6g/e1NGbd5Vo8a/916SKO
             8LK0YAAAAASUVORK5CYII=" style="width:180px">
         <p style="margin-top: 15px; margin-bottom: 15px;">
-            <span style="font-size:1.3em;"></div>'
+            <span style="font-size:1.3em;">'
 
-##get date
-$date = (get-date).ToString()
 
 $html += '</span>
-<span style="font-size:0.75em; text-align: right; padding-top: 8px; padding-right: 2px; float: right;">' + $date + '</span>' 
-
+<span style="font-size:0.75em; text-align: right; padding-top: 8px; padding-right: 2px; float: right;">'
+$html += $date
 # gather list from command line params and file
 function gatherList($Param=$null, $FilePath=$null, $Required=$True, $Name='items'){
     $items = @()
@@ -328,22 +326,12 @@ if($runningTasks.Keys.Count -gt 0){
 
 
                                   }elseif ($oldestbyallJob){   ### Print every jobs oldest entry
-                                  <#
                                   $html += '</table>
-                                <p style="margin-top: 15px; margin-bottom: 15px;"><span style=""font-size:0.75em; text-align: right; padding-top: 8px; padding-right: 2px; float: right;">' + $date +'</span></p>            
-                                
-                                </div>
-                                </body>
-                                </html>'
-                                #>
-                                  $html += '<table>
-                                
                                 <p style="margin-top: 15px; margin-bottom: 15px;">Cohesity Cluster: <span style="font-size:1.5em;">' + $vip + '</span></p>               
-                                </table>
+                                
                                 </div>
                                 </body>
                                 </html>'
-
                                   $jobstats =@()
                                   
                                   $html += '</span>
@@ -473,12 +461,16 @@ if($runningTasks.Keys.Count -gt 0){
     if ($oldest){
     $clusterstats[$vip]['jobname']   = "No active replication tasks found"}else {
                                     
-                                    
-                                    $html += '<table>
-                                
+                                    $html += '</table>
                                 <p style="margin-top: 15px; margin-bottom: 15px;">Cohesity Cluster: <span style="font-size:1.5em;">' + $vip + '</span></p>               
+                                
+                                </div>
+                                </body>
+                                </html>'
+                                        
+                                    $html += '</table>
                                 <p style="margin-top: 15px; margin-bottom: 15px;">No active replication found. </p>               
-                                </table>
+                                
                                 </div>
                                 </body>
                                 </html>'
@@ -556,4 +548,4 @@ if (!(Test-Path $Directory))
 New-Item $directory -type directory
 }
 # copy File to NAS location
-$htmlFileName | Copy-Item -Destination $Directory   
+$htmlFileName | Copy-Item -Destination $Directory
