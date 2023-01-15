@@ -1,4 +1,4 @@
-﻿$league = @{
+$league = @{
    school = @{
       name = 'Lincoln High School' 
       levels = ('9','10','11','12')
@@ -26,6 +26,8 @@
       }
    }
 }
+
+# $league = clusterstat   , scholl & sports   = clusters  , swim is job in sports 
 
 $customers = ("anil","raju")
 $dollors   = ('56','77')
@@ -71,6 +73,25 @@ if ('cycling' -notin $league['sports'].keys){
                                             }
       
       $league['sports']['cycling']['clients'].GetEnumerator()|foreach {
-      "{0} {1}" -f $_.key,$_.value
+      #"{0} {1}" -f $_.key,$_.value
       }
-     $league |ConvertTo-Json -Depth 10
+     "---------------"
+     #$league |ConvertTo-Json -Depth 10
+     
+     
+     $league.GetEnumerator()|foreach {
+                               if ($_.key -eq 'sports'){
+                                    #$_.value.cycling
+                                    #$_.value.cycling.clients
+                                   # $_.value.cycling.clients.keys
+                                   # $_.value.cycling.clients.values
+
+                                    $_.value.cycling.clients.GetEnumerator()|foreach {
+                                    "{0} {1}" -f $_.key ,$_.value
+                                    }
+
+                                                    }
+                                      
+                                     
+
+                                     }
