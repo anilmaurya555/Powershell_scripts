@@ -71,11 +71,11 @@ if ('cycling' -notin $league['sports'].keys){
                                $league['sports']['cycling']['clients'][$customer]= $dollors[$incr]
                                                           $iincr++       
                                             }
-      
+      <#
       $league['sports']['cycling']['clients'].GetEnumerator()|foreach {
      "{0} {1}" -f $_.key,$_.value
       }
-     "---------------"
+     "---------------"  #>
      #$league |ConvertTo-Json -Depth 10
      
      <#
@@ -107,10 +107,19 @@ foreach ($job in $_.value.keys){
                 
                         }
                         write-host "=="
-                       $jobs
+                       #$jobs
 
 if ($jobs.count -gt 0){
 foreach ($job in $jobs){
+
+$league.$($cluster).$($job).GetEnumerator()|foreach {
+            $starttime = $_.value.season
+            $status    = $_.value.balls
+                                                      }
+
+$job
+$starttime
+$status
    
 if (($league.$($cluster).$($job).clients.keys).count -gt 0){
                                  write-host "==22"
