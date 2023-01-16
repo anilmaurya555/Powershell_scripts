@@ -131,3 +131,14 @@ if (($league.$($cluster).$($job).clients.keys).count -gt 0){
                       }
                         }
 
+foreach($server in $clusterstats.GetEnumerator()) {
+    foreach($service in $server.Value.GetEnumerator()) {
+        $starttime = $service.Value['starttime']
+        $status = $service.Value['status']
+
+        $starttime
+        $status
+       
+
+    }
+}
