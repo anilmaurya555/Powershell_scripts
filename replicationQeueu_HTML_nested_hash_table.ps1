@@ -1,4 +1,4 @@
-﻿### process commandline arguments
+### process commandline arguments
 [CmdletBinding()]
 param (
     [Parameter()][array]$vips,
@@ -132,11 +132,25 @@ $html = '<html>
             8LK0YAAAAASUVORK5CYII=" style="width:180px">
         <p style="margin-top: 15px; margin-bottom: 15px;">
             <span style="font-size:1.3em;">'
-
-
+$date = (get-date).ToString()
 $html += '</span>
 <span style="font-size:0.75em; text-align: right; padding-top: 8px; padding-right: 2px; float: right;">'
 $html += $date
+
+$html += '</span>
+                </p>
+                <table>
+                <tr>
+                        <th>Cluster Name</th>
+                        <th>Job Nmae</th>
+                        <th>Job Start Time</th>
+                        <th>Status</th>
+                        <th>Client Replicating</th>
+                        <th>Percentage Completed</th>
+                        <th>Replication Needed</th>
+                        </tr>'
+                 
+
 # gather list from command line params and file
 function gatherList($Param=$null, $FilePath=$null, $Required=$True, $Name='items'){
     $items = @()
@@ -169,6 +183,7 @@ if($vips){
 $vips = @($vips) }else {
 #$vips = ("cohwpcu01")
 #$vips = ("cohwpcu01","cohsdcu01")
+#$vips = ('chyusnpccp03')
 #$vips = ('chyusnpccp02','chyuswpccp02')
 #$vips = ('chyusnpccp03','chyusnpccp01','chyuswpccp01','chyuswpccp03')
 #$vips = ('chyusnpccp01','chyusnpccp02','chyusnpccp03','chyusnpccp05','chyuswpccp01','chyuswpccp02','chyuswpccp03','chyuswpccp05','chyukpccp01','chyukrccp01','chysgpccp01','chysgrccp01','chymaidcp01','chyididcp01')
@@ -332,14 +347,14 @@ if($runningTasks.Keys.Count -gt 0){
                                     $t = $runningTasks[$startTimeUsecs]
                                     "{0}   {1} ({2})" -f (usecsToDate $t.startTimeUsecs), $t.jobName, $t.jobId
                                     if ($t.jobName -notin $clusterstats[$vip].Keys){  ### got a job
-                                                                            $clusterstats[$vip][$t.jobnmae] = @{}
+                                                                            $clusterstats[$vip][$t.jobname] = @{}
                                                                                  
                                     $run = api get "/backupjobruns?allUnderHierarchy=true&exactMatchStartTimeUsecs=$($t.startTimeUsecs)&id=$($t.jobId)"
                                     $runStartTimeUsecs = $run.backupJobRuns.protectionRuns[0].backupRun.base.startTimeUsecs
 
                                     ##############Populate HTML ##############
-                                    $clusterstats[$vip][$t.jobnmae]['starttime']= $((usecsToDate $t.startTimeUsecs).Tostring("MM/dd/yyyy hh:mmtt"))
-                                    $clusterstats[$vip][$t.jobnmae]['status']= $subTask.publicStatus
+                                    $clusterstats[$vip][$t.jobname]['starttime']= $((usecsToDate $t.startTimeUsecs).Tostring("MM/dd/yyyy hh:mmtt"))
+                                    $clusterstats[$vip][$t.jobname]['status']= $subTask.publicStatus
                                                                                                 
 
                                 foreach($task in $run.backupJobRuns.protectionRuns[0].copyRun.activeTasks){
@@ -353,8 +368,8 @@ if($runningTasks.Keys.Count -gt 0){
                                                 $noLongerNeeded = "NO LONGER NEEDED"
                                             }
 
-                                            $clusterstats[$vip][$t.jobnmae]['nolongerneeded'] = $noLongerNeeded
-                                            $clusterstats[$vip][$t.jobnmae]['clients'] = @{}
+                                            $clusterstats[$vip][$t.jobname]['nolongerneeded'] = $noLongerNeeded
+                                            $clusterstats[$vip][$t.jobname]['clients'] = @{}
 
                                             "                       Replication Task ID: {0}  {1}" -f $task.taskUid.objectId, $noLongerNeeded
                                             foreach($subTask in $task.activeCopySubTasks | Sort-Object {$_.publicStatus} -Descending){
@@ -365,7 +380,7 @@ if($runningTasks.Keys.Count -gt 0){
                                                         $pct = 0
                                                     }
                                                     "                       {0} ({1})`t{2}" -f $subTask.publicStatus, $pct, $subTask.entity.displayName
-                                                    $clusterstats[$vip][$t.jobnmae]['clients'][$subTask.entity.displayName] = $pct
+                                                    $clusterstats[$vip][$t.jobname]['clients'][$subTask.entity.displayName] = $pct
                                                 }
                                             }
                                             
@@ -424,83 +439,89 @@ if($runningTasks.Keys.Count -gt 0){
         }
     } ####main script
                                    } #if not oldest
-}else{                              ## no task found
-
-    "`nNo active replication tasks found"
-    if ($oldest){
-    $clusterstats[$vip]['jobname']   = "No active replication tasks found"}else {
-                                    
-                                    $html += '</table>
-                                <p style="margin-top: 15px; margin-bottom: 15px;">Cohesity Cluster: <span style="font-size:1.5em;">' + $vip + '</span></p>               
-                                
-                                </div>
-                                </body>
-                                </html>'
-                                        
-                                    $html += '</table>
-                                <p style="margin-top: 15px; margin-bottom: 15px;">No active replication found. </p>               
-                                
-                                </div>
-                                </body>
-                                </html>'
-                                    
-                                    #$html += '<p><span style="color:green">No active replication tasks found</span></p>'
-                                   #$html += "<tr><td>No active replication tasks found</td> </tr>"
-                                  }
+}
+    
 }
 
-          }  #### VIPS looping
+            #### VIPS looping
 # stop capturing console output to loggin file
 #Stop-Transcript
 
-                if ($oldestbyallJob){
-                $html += '</span>
-                </p>
-                <table>
-                <tr>
-                        <th>Cluster Name</th>
-                        <th>Job Nmae</th>
-                        <th>Job Start Time</th>
-                        <th>Status</th>
-                        <th>Client Replicating</th>
-                        <th>Percentage Completed</th>
-                        <th>Replication Needed</th>
-                        </tr>'
-                 $html += "<tr>
-                $clusterstats.GetEnumerator()|sort-object -Property {$_.key} |foreach {
-                                                 <td>$($_.key)</td>
-                                                 foreach ($job in $_.value.keys){
-                                                 <td>$($job.key)</td>
-                                                 <td>$($job.value.starttime)</td>
-                                                 <td>$($job.value.status)</td>
+             
+                                foreach($cluster in $clusterstats.GetEnumerator()) {
+                                        $clusterName = $cluster.name
+                                        $html += "<tr>
+                                                 <td>$clusterName</td>"
+                                                 $got = $false
+                                  if ($cluster.Value.GetEnumerator().count -gt 0){
+                                       foreach($job in $cluster.Value.GetEnumerator()) {   ###job loop
+                                            $jobname = $job.name                                           
+                                            $starttime = $job.Value['starttime']
+                                            $status    = $job.Value['status']
+                                            $nolongerneeded = $job.Value['nolongerneeded']
+                                            
+                                            if (!$got -eq $true){
+                                            $html += "
+                                                 <td>$jobname</td>
+                                                 <td>$starttime</td>
+                                                 <td>$status</td>
                                                  <td></td>
                                                  <td></td>
-                                                 <td>$($job.value.Notneeded)</td>
+                                                 <td>$nolongerneeded</td>
                                                  </tr>"
+                                                 $got = $true
 
-                                                 if($job.value.keys){
-                                                 foreach ($client in $job.value.keys){
+                                                 } else {
+
+                                                      
                                                  $html += "<tr>
                                                  <td></td>
+                                                 <td>$jobname</td>
+                                                 <td>$starttime</td>
+                                                 <td>$status</td>
                                                  <td></td>
                                                  <td></td>
-                                                 <td></td>
-                                                 <td>$($client.name)</td>
-                                                 <td>$($client.value)</td>
-                                                 <td></td>
+                                                 <td>$nolongerneeded</td>
                                                  </tr>"
-                                                                                     }
-                                                                       }
-
-                                                                                }
-
-                                                                                    }
+                                                       }
                                                  
 
-                                                     
-                             
-                                
-                                    }
+                                             if (($clusterstats.$($clusterName).$($jobname).clients.keys).count -gt 0){
+                                                                 
+                                                                 $clusterstats.$($clusterName).$($jobname).clients.GetEnumerator()|foreach {
+                                                                 
+                                                                $client = $_.key
+                                                                $pct    = $_.value
+                                                                $html += "<tr>
+                                                                 <td></td>
+                                                                 <td></td>
+                                                                 <td></td>
+                                                                 <td></td>
+                                                                 <td>$client</td>
+                                                                 <td>$pct</td>
+                                                                 <td></td>
+                                                                 </tr>"
+                                                                                                                                                         
+                                                                                                                    }
+                                                                                                                                          }
+                                                      }   ### job loop end
+
+                                                      } else{
+                                                            $html += "
+                                                 <td>No active Task Found.</td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 </tr>"
+                                                            }
+
+                                                   
+
+                                                      }
+
+ 
 
                                      $html += "
 </table>                
@@ -517,7 +538,7 @@ foreach($toaddr in $sendTo){
    Send-MailMessage -From $sendFrom -To $toaddr -SmtpServer $smtpServer -Port $smtpPort -Subject "Current Replication stats from ALL US Cohesity cluster." -BodyAsHtml $html -WarningAction SilentlyContinue }
 #$html | out-file "$($cluster.name)-objectreport.html"
 
-
+<#
 #copy report to NAS share
 $today = get-date
 $targetPath = '\\cohwpcu01.ent.ad.ntrs.com\cohesity_reports'
@@ -533,3 +554,4 @@ New-Item $directory -type directory
 }
 # copy File to NAS location
 $htmlFileName | Copy-Item -Destination $Directory
+#>
