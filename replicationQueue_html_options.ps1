@@ -136,8 +136,10 @@ $html = '<html>
 
 
 $html += '</span>
-<span style="font-size:0.75em; text-align: right; padding-top: 8px; padding-right: 2px; float: right;">'
-$html += $date
+<span style="font-size:0.75em; text-align: right; padding-top: 8px; padding-right: 2px; float: right;">'+ $date + '</span></p>
+ </div>
+ </body>
+ </html>'
 # gather list from command line params and file
 function gatherList($Param=$null, $FilePath=$null, $Required=$True, $Name='items'){
     $items = @()
