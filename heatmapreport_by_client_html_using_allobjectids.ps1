@@ -437,7 +437,7 @@ if($objectId){
 
                        # get protection jobs
                             $getjob = @{}
-                            $jobs = api get protectionJobs|Where-Object {$_.name -notlike "*_DELETED_*"}
+                            $jobs = api get protectionJobs|Where-Object {$_.name -notlike "*_DELETED_*" -and $_.isPaused -eq $false}
 
                             foreach ($job in $jobs){
                                 if ($job.name -notin $getjob.keys){
