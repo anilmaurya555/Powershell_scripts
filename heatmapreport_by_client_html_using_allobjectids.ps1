@@ -374,10 +374,6 @@ apiauth -vip $vip -username $username -domain $domain
 "================= Working on Cluster $vip =============="
 "===========Now  $(Get-Date -Format hh:mm) =============="
 
-
-# get root protection sources
-$sources = api get protectionSources
-
 foreach($object in $objects){   ###2
 # get object ID
 
