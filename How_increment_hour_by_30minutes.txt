@@ -1,0 +1,18 @@
+PS F:\> $ts = New-TimeSpan -Hours 17 -Minutes 00
+
+PS F:\> $newts = $ts + (New-TimeSpan -Minutes 30)
+
+PS F:\> "$newts"
+17:30:00
+
+PS F:\> $newts = $newts + (New-TimeSpan -Minutes 30)
+
+PS F:\> "$newts"
+18:00:00
+
+PS F:\> $newts = $newts + (New-TimeSpan -Minutes 30)
+
+PS F:\> "$newts"
+18:30:00
+
+PS F:\> 
