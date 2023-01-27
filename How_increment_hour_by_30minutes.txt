@@ -1,3 +1,20 @@
+PS F:\> $starttime = "17:00"
+
+PS F:\> $hours,$minutes = $starttime.Split(":")
+
+PS F:\> $hours
+17
+
+PS F:\> $minutes
+00
+
+PS F:\> $ts = New-TimeSpan -Hours $hours -Minutes $minutes
+
+PS F:\> "$ts"
+17:00:00
+
+PS F:\> 
+
 PS F:\> $ts = New-TimeSpan -Hours 17 -Minutes 00
 
 PS F:\> $newts = $ts + (New-TimeSpan -Minutes 30)
