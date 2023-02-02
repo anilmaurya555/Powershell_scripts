@@ -195,7 +195,7 @@ if($config){
     $hostName = $status.clusterConfig.proto.clusterPartitionVec[0].hostName
 }else{
     $chassisList = (api get -v2 chassis).chassis
-    $hostName = (api get clusterPartitions)[0].hostName
+    $hostName = $cluster.name
 }
 
 $physicalCapacity = [math]::round($cluster.stats.usagePerfStats.physicalCapacityBytes / $TiB, 1)
