@@ -1,4 +1,4 @@
-﻿### process commandline arguments
+### process commandline arguments
 [CmdletBinding()]
 param (
     #[Parameter(Mandatory = $True)][string]$vip, #the cluster to connect to (DNS name or IP)
@@ -9,10 +9,29 @@ param (
 ### source the cohesity-api helper code
 . $(Join-Path -Path $PSScriptRoot -ChildPath cohesity-api.ps1)
 
+### create excel spreadsheet
+$xlsx = Join-Path -Path (Get-Location).Path -ChildPath "Cohesity_complete_Permission_list-$(get-date -UFormat '%Y-%m-%d-%H-%M-%S').xlsx"
+write-host "Saving Report to $xlsx..."
+$excel = New-Object -ComObject excel.application
+$workbook = $excel.Workbooks.Add()
+$worksheets=$workbook.worksheets
+$sheet=$worksheets.item(1)
+$sheet.activate | Out-Null
 
-"ClusterNmae,AccountType,Doamin,Name,Permission"|Out-File -FilePath ./accountpermissions.csv
+### Column Headings
+$sheet.Cells.Item(1,1) = 'Cohesity Cluster'
+$sheet.Cells.Item(1,2) = 'Account Type'
+$sheet.Cells.Item(1,3) = 'Domain Name'
+$sheet.Cells.Item(1,4) = 'Name'
+$sheet.Cells.Item(1,5) = 'Permission'
+$sheet.usedRange.rows(1).font.colorIndex = 10
+$sheet.usedRange.rows(1).font.bold = $True
+$rownum = 2
 
-$vips = ('cohwpcu01','cohsdcu01')
+#"ClusterNmae,AccountType,Doamin,Name,Permission"|Out-File -FilePath ./accountpermissions.csv
+
+#$vips = ('chyukrccp01')
+$vips = ('chyididcp01','chymaidcp01','chysgpccp01','chysgrccp01','chyukpccp01','chyukrccp01','chyusnpccp01','chyuswpccp01','chyusnpccp02','chyuswpccp02','chyusnpccp03','chyuswpccp03','chyusnpccp04','chyuswpccp04','chyusnpccp05','chyuswpccp05')
 $permisions = @{}
 foreach ($vip in $vips){
 
@@ -24,7 +43,7 @@ $permisions[$vip]['Groups']=@{}
 
 ### authenticate
 apiauth -vip $vip -username $username -domain $domain
-
+"============= $vip ================"
 
 $cluster = api get cluster
 $outFile = "principals-$($cluster.name).txt"
@@ -46,11 +65,11 @@ foreach($user in $users | Sort-Object -Property username){
         if($user.username){
            $pname = $user.username}else{ $pname = $user.name}
            $ptype = "User"
-          # "`n{0}: {1}/{2}" -f $ptype.ToUpper(), $user.domain, $pname
-           #"Roles: {0}" -f $proles.label -join ', '
+           #"`n{0}: {1}/{2}" -f $ptype.ToUpper(), $user.domain, $pname
+          #"Roles: {0}" -f $proles.label -join ', '
         $permisions[$vip]['Users'][$user.domain][$pname] = $proles.label -join ', '
 
-        if($user.restricted -eq $True){
+        <#if($user.restricted -eq $True){
             "Access List:"
             $psources = api get principals/protectionSources?sids=$($user.sid)
             foreach($source in $psources[0].protectionSources){
@@ -66,19 +85,19 @@ foreach($user in $users | Sort-Object -Property username){
                         $parentName = $parent.name
                     }
                     "       {0}/{1} ({2})" -f $parentName, $sourceName, $sourceType
-                         $permisions[$vip]['Users'][$user.domain][$pname]['Access List'] = "$parentName/$sourceName, $sourceType"
+                         #$permisions[$vip]['Users'][$user.domain][$pname]['Access List'] = $parentName/$sourceName, $sourceType
                 }else{
                     "       {0} ({1})" -f $sourceName, $sourceType
-                    $permisions[$vip]['Users'][$user.domain][$pname]['Access List'] = "$sourceName, $sourceType"
+                    #$permisions[$vip]['Users'][$user.domain][$pname]['Access List'] = $sourceName, $sourceType
                 }
 
                 
             }
             foreach($view in $psources[0].views){
                 "       {0} ({1})" -f $view.name, "View"
-                $permisions[$vip]['Users'][$user.domain][$pname]['Access List'] = "$view.name"
+                #$permisions[$vip]['Users'][$user.domain][$pname]['Access List'] = $view.name
             }
-        }  ##restricted end 
+        }  ##restricted end #>
     }  ##look for roles
 }
 
@@ -96,7 +115,7 @@ foreach($group in $groups | Sort-Object -Property name){
            #"Roles: {0}" -f $proles.label -join ', '
         $permisions[$vip]['Groups'][$group.domain][$pname] = $proles.label -join ', '
 
-        if($group.restricted -eq $True){
+        <#if($group.restricted -eq $True){
             "Access List:"
             $psources = api get principals/protectionSources?sids=$($group.sid)
             foreach($source in $psources[0].protectionSources){
@@ -112,19 +131,19 @@ foreach($group in $groups | Sort-Object -Property name){
                         $parentName = $parent.name
                     }
                     "       {0}/{1} ({2})" -f $parentName, $sourceName, $sourceType
-                         $permisions[$vip]['Groups'][$group.domain][$pname]['Access List'] = "$parentName/$sourceName, $sourceType"
+                         #$permisions[$vip]['Groups'][$group.domain][$pname]['Access List'] = $parentName/$sourceName, $sourceType
                 }else{
                     "       {0} ({1})" -f $sourceName, $sourceType
-                    $permisions[$vip]['Groups'][$group.domain][$pname]['Access List'] = "$sourceName, $sourceType"
+                    #$permisions[$vip]['Groups'][$group.domain][$pname]['Access List'] = $sourceName,$sourceType
                 }
 
                 
             }
             foreach($view in $psources[0].views){
                 "       {0} ({1})" -f $view.name, "View"
-                $permisions[$vip]['Groups'][$group.domain][$pname]['Access List'] = "$view.name"
+                #$permisions[$vip]['Groups'][$group.domain][$pname]['Access List'] = $view.name
             }
-        }  ##restricted end 
+        }  ##restricted end #>
     }  ##look for roles
 }
 
@@ -140,7 +159,18 @@ foreach ($cluster in $_.value.GetEnumerator()){  ####type
 
                # "{0} {1} {2} {3} " -f $vip,$type,$prin.name,$prin.value                   
  
-"$vip,$type,$domain,$($prin.name),$($prin.value) "|Out-File -FilePath ./accountpermissions.csv -Append
+#"$vip,$type,$domain,$($prin.name),$($prin.value) "|Out-File -FilePath ./accountpermissions.csv -Append
+
+####### populate Excel sheet
+if($job.isActive -ne $false ){  #3
+        $sheet.Cells.Item($rownum,1) = $vip
+        $sheet.Cells.Item($rownum,2) = $type
+        $sheet.Cells.Item($rownum,3) = $domain
+        $sheet.Cells.Item($rownum,4) = $($prin.name)
+        $sheet.Cells.Item($rownum,5) = $($prin.value)
+        $rownum += 1
+    }   #3
+    ################end of excel sheet population
                                                          }
 
                                                }    ##dom
@@ -148,3 +178,12 @@ foreach ($cluster in $_.value.GetEnumerator()){  ####type
                                              }   ###type
 
                             }
+### final formatting and save
+$sheet.columns.autofit() | Out-Null
+$sheet.columns("Q").columnWidth = 100
+$sheet.columns("Q").wraptext = $True
+$sheet.usedRange.rows(1).Font.Bold = $True
+$excel.Visible = $true
+$workbook.SaveAs($xlsx,51) | Out-Null
+$workbook.close($false)
+$excel.Quit()
