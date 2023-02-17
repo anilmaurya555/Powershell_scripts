@@ -16,7 +16,7 @@ $vips = ('chyididcp01','chymaidcp01','chysgpccp01','chysgrccp01','chyukpccp01','
 
 $allfiles = @()
 foreach ($vip in $vips){
-
+$totalsize = 0
 $domain = 'ent.ad.ntrs.com'
 # authenticate
 apiauth -vip $vip -username $username -domain $domain
