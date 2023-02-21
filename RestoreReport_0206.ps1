@@ -1,4 +1,4 @@
-﻿#./chargebackReport.ps1 -vip mycluster -username myusername [ -domain mydomain.net ] -costPerGB .10 [ -prefix demo, test ] -sendTo myuser@mydomain.net, anotheruser@mydomain.net -smtpServer 192.168.1.95 -sendFrom backupreport@mydomain.net
+#./chargebackReport.ps1 -vip mycluster -username myusername [ -domain mydomain.net ] -costPerGB .10 [ -prefix demo, test ] -sendTo myuser@mydomain.net, anotheruser@mydomain.net -smtpServer 192.168.1.95 -sendFrom backupreport@mydomain.net
  
 ### process commandline arguments
 [CmdletBinding()]
@@ -18,6 +18,32 @@ param (
 
 ### source the cohesity-api helper code
 . $(Join-Path -Path $PSScriptRoot -ChildPath cohesity-api.ps1)
+
+### create excel spreadsheet
+$xlsx = Join-Path -Path (Get-Location).Path -ChildPath "Cohesity_Restore_report-$(get-date -UFormat '%Y-%m-%d-%H-%M-%S').xlsx"
+write-host "Saving Report to $xlsx..."
+$excel = New-Object -ComObject excel.application
+$workbook = $excel.Workbooks.Add()
+$worksheets=$workbook.worksheets
+$sheet=$worksheets.item(1)
+$sheet.activate | Out-Null
+
+### Column Headings
+$sheet.Cells.Item(1,1) = 'Cohesity Cluster'
+$sheet.Cells.Item(1,2) = 'Recovery Date'
+$sheet.Cells.Item(1,3) = 'Task Name'
+$sheet.Cells.Item(1,4) = 'Object'
+$sheet.Cells.Item(1,5) = 'Type of Recovery'
+$sheet.Cells.Item(1,6) = 'Destination'
+$sheet.Cells.Item(1,7) = 'Status'
+$sheet.Cells.Item(1,8) = 'Duration in Minutes'
+$sheet.Cells.Item(1,9) = 'User Perfored Recovery'
+
+
+$sheet.usedRange.rows(1).font.colorIndex = 10
+$sheet.usedRange.rows(1).font.bold = $True
+$rownum = 2
+
 
 #$clusters = ('chyusnpccp02','chyuswpccp02','chyusnpccp03','chyuswpccp03')
 #$clusters = ('chyuswpccp02')
@@ -264,6 +290,28 @@ foreach ($restore in $restores){
             <td>$duration</td>
             <td>$($restore.restoreTask.performRestoreTaskState.base.user)</td>
             </tr>"
+
+             ####### populate Excel sheet
+                if($job.isActive -ne $false ){  #3
+                        $sheet.Cells.Item($rownum,1) = $cluster
+                        $sheet.Cells.Item($rownum,2) = $startTime
+                        $sheet.Cells.Item($rownum,3) = $taskName
+                        $sheet.Cells.Item($rownum,4) = $objectName
+                        $sheet.Cells.Item($rownum,5) = $objectType
+                        $sheet.Cells.Item($rownum,6) = $targetObject
+                        $sheet.Cells.Item($rownum,7) = $status
+                        $sheet.Cells.Item($rownum,8) = $duration
+                        $sheet.Cells.Item($rownum,9) = $($restore.restoreTask.performRestoreTaskState.base.user)
+
+                        $sheet.Hyperlinks.Add(
+                        $sheet.Cells.Item($rownum,3),
+                        $link
+                             ) | Out-Null
+
+                        $rownum += 1
+                    }   #3
+                    ################end of excel sheet population
+
         }
     }elseif($restore.restoreTask.performRestoreTaskState.PSObject.properties['restoreAppTaskState']){
         $targetServer = $sourceServer = $restore.restoreTask.performRestoreTaskState.restoreAppTaskState.restoreAppParams.ownerRestoreInfo.ownerObject.entity.displayName
@@ -303,6 +351,28 @@ foreach ($restore in $restores){
             <td>$duration</td>
             <td>$($restore.restoreTask.performRestoreTaskState.base.user)</td>
             </tr>"
+
+            $sourceobject = "$sourceServer/$objectName"
+                            ####### populate Excel sheet
+                if($job.isActive -ne $false ){  #3
+                        $sheet.Cells.Item($rownum,1) = $cluster
+                        $sheet.Cells.Item($rownum,2) = $startTime
+                        $sheet.Cells.Item($rownum,3) = $taskName
+                        $sheet.Cells.Item($rownum,4) = $sourceobject
+                        $sheet.Cells.Item($rownum,5) = $objectType
+                        $sheet.Cells.Item($rownum,6) = $targetObject
+                        $sheet.Cells.Item($rownum,7) = $status
+                        $sheet.Cells.Item($rownum,8) = $duration
+                        $sheet.Cells.Item($rownum,9) = $($restore.restoreTask.performRestoreTaskState.base.user)
+
+                        $sheet.Hyperlinks.Add(
+                        $sheet.Cells.Item($rownum,3),
+                        $link
+                             ) | Out-Null
+
+                        $rownum += 1
+                    }   #3
+                    ################end of excel sheet population
         }
     }else{
         "***************more types****************"
@@ -318,13 +388,22 @@ $html += "</table>
 $html | out-file "restoreReport.html"
 $htmlfimename = "restoreReport.html"
 
+### final formatting and save
+$sheet.columns.autofit() | Out-Null
+$sheet.columns("Q").columnWidth = 100
+$sheet.columns("Q").wraptext = $True
+$sheet.usedRange.rows(1).Font.Bold = $True
+$excel.Visible = $true
+$workbook.SaveAs($xlsx,51) | Out-Null
+$workbook.close($false)
+$excel.Quit()
 
 if($smtpServer -and $sendFrom -and $sendTo){
     write-host "sending report to $([string]::Join(", ", $sendTo))"
 
     ### send email report
     foreach($toaddr in $sendTo){
-        Send-MailMessage -From $sendFrom -To $toaddr -SmtpServer $smtpServer -Port $smtpPort -Subject "Last $lastXDays Days Cohesity restore reports from ALL clusters" -BodyAsHtml $html -WarningAction SilentlyContinue
+        Send-MailMessage -From $sendFrom -To $toaddr -SmtpServer $smtpServer -Port $smtpPort -Subject "Last $lastXDays Days Cohesity restore reports from ALL clusters" -BodyAsHtml $html -WarningAction SilentlyContinue -Attachments $xlsx
     }
 }
 
@@ -343,3 +422,4 @@ New-Item $directory -type directory
 }
 # copy File to NAS location
 $htmlfimename | Copy-Item -Destination $Directory
+$xlsx | Copy-Item -Destination $Directory
