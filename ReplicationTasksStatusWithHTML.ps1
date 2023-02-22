@@ -1,4 +1,4 @@
-﻿### usage: ./monitorReplicationTasks.ps1 -vip mycluster -username admin [ -domain local ]
+### usage: ./monitorReplicationTasks.ps1 -vip mycluster -username admin [ -domain local ]
 
 ### process commandline arguments
 [CmdletBinding()]
@@ -37,6 +37,7 @@ $sheet.Cells.Item(1,1) = 'Cohesity Cluster'
 $sheet.Cells.Item(1,2) = 'Group Nmae'
 $sheet.Cells.Item(1,3) = 'Cluster Name'
 $sheet.Cells.Item(1,4) = 'Status'
+$sheet.Cells.Item(1,5) = 'Last Replicated Date'
 
 $sheet.usedRange.rows(1).font.colorIndex = 10
 $sheet.usedRange.rows(1).font.bold = $True
@@ -236,8 +237,13 @@ foreach ($job in (api get -v2 data-protect/protection-groups?isActive=true).prot
                                                         $sheet.Cells.Item($rownum,2) = $jobName
                                                         $sheet.Cells.Item($rownum,3) = $target
                                                         $sheet.Cells.Item($rownum,4) = $status
+                                                        $sheet.Cells.Item($rownum,5) = $replicationEnd
                                                         
+                                                        if ($status -match "Running"){
+                                                        $sheet.usedRange.rows($rownum).Interior.ColorIndex = 33
+                                                                 }
                                                         $rownum += 1
+
                                                     }   #3
                                                     ################end of excel sheet population
 
@@ -254,7 +260,11 @@ foreach ($job in (api get -v2 data-protect/protection-groups?isActive=true).prot
                                                         $sheet.Cells.Item($rownum,2) = $jobName
                                                         $sheet.Cells.Item($rownum,3) = $target
                                                         $sheet.Cells.Item($rownum,4) = $status
+                                                        $sheet.Cells.Item($rownum,5) = $replicationEnd
                                                         
+                                                        if ($status -match "Running"){
+                                                        $sheet.usedRange.rows($rownum).Interior.ColorIndex = 33
+                                                                 }
                                                         $rownum += 1
                                                     }   #3
                                                     ################end of excel sheet population
@@ -295,6 +305,7 @@ $workbook.SaveAs($xlsx,51) | Out-Null
 $workbook.close($false)
 $excel.Quit()
 
+$allfiles += $xlsx
 #############html 2 ######
 $title2 = "Thank you "
 $html2 = '<html>
