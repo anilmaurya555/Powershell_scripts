@@ -46,8 +46,8 @@ $rownum = 2
 
 
 #$clusters = ('chyusnpccp02','chyuswpccp02','chyusnpccp03','chyuswpccp03')
-#$clusters = ('chyuswpccp02')
-$clusters = ('chyididcp01','chymaidcp01','chysgpccp01','chysgrccp01','chyukpccp01','chyukrccp01','chyusnpccp01','chyuswpccp01','chyusnpccp02','chyuswpccp02','chyusnpccp03','chyuswpccp03','chyusnpccp04','chyuswpccp04','chyusnpccp05','chyuswpccp05')
+$clusters = ('chyuswpccp02')
+#$clusters = ('chyididcp01','chymaidcp01','chysgpccp01','chysgrccp01','chyukpccp01','chyukrccp01','chyusnpccp01','chyuswpccp01','chyusnpccp02','chyuswpccp02','chyusnpccp03','chyuswpccp03','chyusnpccp04','chyuswpccp04','chyusnpccp05','chyuswpccp05')
 
 ### determine start and end dates
 $today = Get-Date
@@ -307,7 +307,9 @@ foreach ($restore in $restores){
                         $sheet.Cells.Item($rownum,3),
                         $link
                              ) | Out-Null
-
+                       if ($status -match "Failure"){
+                         $sheet.usedRange.rows($rownum).Interior.ColorIndex = 3
+                                              }
                         $rownum += 1
                     }   #3
                     ################end of excel sheet population
@@ -370,6 +372,10 @@ foreach ($restore in $restores){
                         $link
                              ) | Out-Null
 
+                        if ($status -match "Failure"){
+                         $sheet.usedRange.rows($rownum).Interior.ColorIndex = 3
+                                              }
+                             
                         $rownum += 1
                     }   #3
                     ################end of excel sheet population
