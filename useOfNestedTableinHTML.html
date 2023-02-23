@@ -1,0 +1,50 @@
+<!doctype html>
+<html>                                                       <! start of html  >
+<head>
+<style>
+table, th, td {
+  border: 2px solid green;
+  border-collapse: collapse;
+  font-size: 1em;
+  width: 100%;
+   }
+th, td {
+  background-color: #96D4D4;
+  width: 33%;
+            text-align: left;
+            padding: 6px;
+}
+        tr:nth-child(even) {
+            background-color: #F1F1F1;
+        }
+
+</style>
+<meta charset="utf-8">
+<title> NestedTables </title>
+</head>
+<body>            
+<table > <!  main table>
+<tr>      <! start of 1st row >
+<td>
+<table>  <!  left table>
+<tr><th> column1</th> 
+<th> column2</th></tr>
+<tr><td> 123</td>
+<td> 456</td></tr>
+<tr><td> 123</td>
+<td> 456</td></tr>
+</table>
+</td>            <! end of first cell in first row>
+<td>             <! start of second cell in frist row>
+<table>          <! start of right table>
+<tr><th>privileges</th></tr>
+<tr><td> scweuwevewhvwuhvwvwhunvivbbhvwbh</td></tr>
+</table>         <! end of right table >
+</td>            <! end of main cell which was divided between two table>
+</tr>            <! end of 1st row>
+</table>         <! end of main table>
+</body>
+</html>
+
+
+
