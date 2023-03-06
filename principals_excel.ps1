@@ -23,7 +23,8 @@ $sheet.Cells.Item(1,1) = 'Cohesity Cluster'
 $sheet.Cells.Item(1,2) = 'Account Type'
 $sheet.Cells.Item(1,3) = 'Domain Name'
 $sheet.Cells.Item(1,4) = 'Name'
-$sheet.Cells.Item(1,5) = 'Permission'
+$sheet.Cells.Item(1,5) = 'Description'
+$sheet.Cells.Item(1,6) = 'Permission'
 $sheet.usedRange.rows(1).font.colorIndex = 10
 $sheet.usedRange.rows(1).font.bold = $True
 $rownum = 2
@@ -65,10 +66,12 @@ foreach($user in $users | Sort-Object -Property username){
         if($user.username){
            $pname = $user.username}else{ $pname = $user.name}
            $ptype = "User"
+           $descrip = $user.description
            #"`n{0}: {1}/{2}" -f $ptype.ToUpper(), $user.domain, $pname
           #"Roles: {0}" -f $proles.label -join ', '
-        $permisions[$vip]['Users'][$user.domain][$pname] = $proles.label -join ', '
-
+        $permisions[$vip]['Users'][$user.domain][$pname] = @{}
+        $permisions[$vip]['Users'][$user.domain][$pname]['permission'] = $proles.label -join ', '
+        $permisions[$vip]['Users'][$user.domain][$pname]['description']= $descrip
         <#if($user.restricted -eq $True){
             "Access List:"
             $psources = api get principals/protectionSources?sids=$($user.sid)
@@ -111,9 +114,12 @@ foreach($group in $groups | Sort-Object -Property name){
          if($group.username){
            $pname = $group.username}else{ $pname = $group.name}
            $ptype = "Group"
+           $descrip = $group.description
            #"`n{0}: {1}/{2}" -f $ptype.ToUpper(), $group.domain, $pname
            #"Roles: {0}" -f $proles.label -join ', '
-        $permisions[$vip]['Groups'][$group.domain][$pname] = $proles.label -join ', '
+        $permisions[$vip]['Groups'][$group.domain][$pname] = @{}
+        $permisions[$vip]['Groups'][$group.domain][$pname]['permission'] = $proles.label -join ', '
+        $permisions[$vip]['Groups'][$group.domain][$pname]['description'] = $descrip 
 
         <#if($group.restricted -eq $True){
             "Access List:"
@@ -167,7 +173,8 @@ if($job.isActive -ne $false ){  #3
         $sheet.Cells.Item($rownum,2) = $type
         $sheet.Cells.Item($rownum,3) = $domain
         $sheet.Cells.Item($rownum,4) = $($prin.name)
-        $sheet.Cells.Item($rownum,5) = $($prin.value)
+        $sheet.Cells.Item($rownum,5) = $($prin.value.description)
+        $sheet.Cells.Item($rownum,6) = $($prin.value.permission)
         $rownum += 1
     }   #3
     ################end of excel sheet population
