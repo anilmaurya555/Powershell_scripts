@@ -1,8 +1,7 @@
-﻿<#
+<#
 !!!!!!!!!!!!!!!  Takes too long to run So run from reporting server                                   !!!!!!!!!!
-!!!!!!  collect objectids are 20 Min, Total Time toook for one client on NPC02 to print report 22 Min !!!!!!!!!!
-!!!!!! collect objectids are 20 Min,  Time toook for FIVE client on NPC02 to print report 23 min     !!!!!!!!!!
-!!!!!! So it takes time collecting objectIDs !!!
+!!!!!!  collect objectids are 6 Min, Total Time toook for one client on NPC02 to print report 22 Min !!!!!!!!!!
+
 #>
 
 [CmdletBinding()]
@@ -22,6 +21,16 @@ param (
     [Parameter()][string]$sendFrom # send from address
 )
 
+### create excel spreadsheet
+$xlsx = Join-Path -Path (Get-Location).Path -ChildPath "HeatMap_report_$(get-date -UFormat '%Y-%m-%d-%H-%M-%S').xlsx"
+write-host "Saving Report to $xlsx..."
+$excel = New-Object -ComObject excel.application
+$workbook = $excel.Workbooks.Add()
+$worksheets=$workbook.worksheets
+$sheet=$worksheets.item(1)
+$sheet.activate | Out-Null
+
+
 # source the cohesity-api helper code
 . $(Join-Path -Path $PSScriptRoot -ChildPath cohesity-api.ps1)
 
@@ -29,8 +38,8 @@ if(!$ObjectClusterList){
 if($allvip){
 $vips = @($allvip) }else {
 #$vips = ('cohwpcu01','cohsdcu01')
-$vips = ('chyusnpccp02','chyuswpccp02','chyuswpccp03')
-#$vips = ('chyusnpccp01','chyusnpccp02','chyusnpccp03','chyusnpccp05','chyuswpccp01','chyuswpccp02','chyuswpccp03','chyuswpccp05','chyukpccp01','chyukrccp01','chysgpccp01','chysgrccp01','chymaidcp01','chyididcp01')
+#$vips = ('chyusnpccp02')
+$vips = ('chyusnpccp01','chyusnpccp02','chyusnpccp03','chyusnpccp05','chyuswpccp01','chyuswpccp02','chyuswpccp03','chyuswpccp05','chyukpccp01','chyukrccp01','chysgpccp01','chysgrccp01','chymaidcp01','chyididcp01')
 #$vips = ('chyusnpccp01','chyuswpccp01','chyusnpccp02','chyuswpccp02','chyusnpccp05','chyuswpccp05')
                      }
                      }
@@ -90,8 +99,8 @@ function Get-FromJson
 
     $global:hashtable = Get-Value -value (ConvertFrom-Json $json)    
 }
-"================Loading ObjectId Table ============"
-"===========Now  $(Get-Date -Format hh:mm) ========="
+"================Loading ObjectId Table ==================================="
+"===========Now  $(Get-Date -Format hh:mm) =========will take 6 Min as of 3/1/23====="
 Get-FromJson
 $allobjectids = @{}
 $allobjectids = $global:hashtable
@@ -119,6 +128,22 @@ for ($i = $lastWeek; $i -le $today; $i=$i.AddDays(1)){
     $reportDays += $i.ToString('MM-dd')
     $reportDates += $i
 }
+### Column Headings for excel sheet
+if ($last7days){
+$sheet.Cells.Item(1,1) = 'Cluster Name'
+$sheet.Cells.Item(1,2) = 'Job Nmae'
+$sheet.Cells.Item(1,3) = 'Client'
+$sheet.Cells.Item(1,4) = 'Backup Type'
+$ncell = 5
+foreach ($ds in $reportDays){
+$sheet.Cells.Item(1,$ncell) = $ds
+$ncell += 1
+}
+
+$sheet.usedRange.rows(1).font.colorIndex = 10
+$sheet.usedRange.rows(1).font.bold = $True
+$rownum = 2
+                 }
 
 $title = "Heatmap Report "
 
@@ -366,49 +391,48 @@ $clustertable = @{}
 
 
 if(!$ObjectClusterList){
-foreach ($vip in $vips){
+
 
 
 ### authenticate
-apiauth -vip $vip -username $username -domain $domain 
+#apiauth -vip $vip -username $username -domain $domain 
 "================= Working on Cluster $vip =============="
 "===========Now  $(Get-Date -Format hh:mm) =============="
+
 
 foreach($object in $objects){   ###2
 # get object ID
 
 foreach($cluster in $allobjectids.GetEnumerator()) {
          
-          if ($cluster.name -eq $vip){
+          
           
           if ($cluster.Value.GetEnumerator().count -gt 0){
                      foreach($obj in $cluster.Value.GetEnumerator()) {
                             if ($obj.name -eq $object){
                                  $objectId = $obj.value
-                                 #$objectId
+                                         $found = "True"
+                         if ($cluster.name -notin $clustertable.Keys){
+                                $clustertable[$cluster.name] = @($object)
+                       
+                                   }else{
+
+                                   $clustertable[$cluster.name] += $object
+                                         }
                                                  }
 
                                                                    }
                                                  }
-                                }
+                                
 
                                                    }
 
 ##############################
 
-if($objectId){
-        $found = "True"
-        if ($vip -notin $clustertable.Keys){
-                       $clustertable[$vip] = @($object)
-                                   }else{
 
-                                   $clustertable[$vip] += $object
-                                         }
-                                
-                           }        ###if object found
                                }    ###for each object
-                               }
-            }else {                                   ###objectand soulce list provided
+                               
+            }else {                                   ###object and cluster list provided
                        foreach($object in $objects){   ##2
                                
                                foreach ($line in get-content $ObjectClusterList){  ###4
@@ -429,6 +453,8 @@ if($objectId){
                 if (!$found -eq 'True'){
                                   Write-Host "`n$object not protected" -ForegroundColor Yellow
                                       }  #>
+    $foundclients = @()
+    
     $clustertable.GetEnumerator()|ForEach-Object{
                        apiauth -vip $_.name -username $username -domain $domain
 
@@ -437,7 +463,7 @@ if($objectId){
 
                        # get protection jobs
                             $getjob = @{}
-                            $jobs = api get protectionJobs|Where-Object {$_.name -notlike "*_DELETED_*" -and $_.isPaused -eq $false}
+                            $jobs = api get protectionJobs|Where-Object {$_.name -notlike "*_DELETED_*"  -and $_.isPaused -eq $false }
 
                             foreach ($job in $jobs){
                                 if ($job.name -notin $getjob.keys){
@@ -452,10 +478,14 @@ if($objectId){
 "==========Report Collected form $($_.name) ==========="
                             foreach ( $client in $_.value){  ##!
                                  
-                                 "Generation Heatmap report...`n"
+                                # "Generation Heatmap report...`n"
                             foreach($item in $report | Sort-Object -Property name|Where-Object {$_.name -like $client}){ ##@
                                 $parentName = $item.parentSourceName
                                 $objectName = $item.name
+                                if ($objectName -notin $foundclients){
+                                               $foundclients += $objectName
+                                                                     }
+
                                 $objectid = $item.id
                                 $getjob.GetEnumerator()|foreach {
                                                if ( $_.value.sourceids -contains $objectid){
@@ -467,6 +497,7 @@ if($objectId){
                                 $objectType = $item.environment.subString(1)
                                 $trends = $item.trends
                                 $trendCells = @()
+                                $trendxcells = @()
                                 foreach($reportDate in $reportDates){ ##3
                                     $trend = $trends | Where-Object {(get-date -Date ($_.trendName)) -eq $reportDate }
                                     if($trend){
@@ -482,12 +513,20 @@ if($objectId){
                                         $trendHTML += '<div class="color-block-running" style="width:' + $pctRunning + '%;"></div>'
                                         $trendHTML += '</div>'
 
+                                        if ($pctSuccess -gt 50){
+                                                 $trendxcells += "Completed"}elseif ($pctFailed -gt 50 ){ 
+                                                 $trendxcells += "Failed"}elseif ($pctRunning -gt 50){
+                                                 $trendxcells += "Running"}elseif ($pctCancelled -gt 50){
+                                                 $trendxcells += "Cancelled"}
+
                                         # $trendHTML = '<div class="color-block-wrapper"><div class="color-block-success" style="width:' + $pctSuccess + '%;"></div><div class="color-block-error" style="width:' + $pctFailed + '%;"></div><div class="color-block-cancelled" style="width:' + $pctCancelled + '%;"></div><div class="color-block-running" style="width:' + $pctRunning + '%;"></div></div>'
                                     }else{
                                         $trendHTML = '<div class="color-block-wrapper"><div class="color-block-none"></div></div>'
+                                        
                                     }
                                     $trendCells += $trendHTML
                                 }  ##3
+                                
                                 if($last7days){
                                 
                                 $html += "
@@ -503,6 +542,27 @@ if($objectId){
                                 <td>{5}</td>
                                 <td>{6}</td>
                                 </tr>" -f $trendCells
+
+                                ####### populate Excel sheet
+                                                
+                                                        $sheet.Cells.Item($rownum,1) = $($_.name)
+                                                        $sheet.Cells.Item($rownum,2) = $jobName
+                                                        $sheet.Cells.Item($rownum,3) = $objectName
+                                                        $sheet.Cells.Item($rownum,4) = $objectType
+                                                        $cell = 5
+                                                        foreach ($tx in $trendxcells){
+                                                        $sheet.Cells.Item($rownum,$cell) = $tx
+                                                        if ($tx -eq "Completed"){
+                                                        $sheet.Cells.Item($rownum,$cell).Interior.ColorIndex = 33}elseif ($tx -eq "Failed"){
+                                                        $sheet.Cells.Item($rownum,$cell).Interior.ColorIndex = 3 }
+                                                        $cell += 1
+                                                        }
+                                                        
+                                                        
+                                                        $rownum += 1
+
+                                                    
+                                                    ################end of excel sheet population
                                               }else{
                                 if($last14days){
 
@@ -534,6 +594,97 @@ if($objectId){
                                                    } ##1
 
                                                 }
+
+"##################### object not in protected ###############################"
+
+          foreach ($object in $objects){
+                  $found = $True
+                  $trendCells = @()
+
+                                 if ($foundclients -notcontains $object){
+                                               $found = $false
+                                                     }
+                                 <#foreach ($client in $foundclients){
+                                 if ($client -notlike $object){
+                                           $found -eq $false
+                                                      }
+                                                      }#>
+
+                                 <#foreach ($client in $foundclients){
+                                 if ($client -notmatch "*$object*|$object*|*$object"){
+                                           $found -eq $false
+                                                      }
+                                                      }#>
+                                                  if($found -eq $false){
+                                                  if($last7days){
+                             1..7| foreach {
+                             $trendHTML = '<div class="color-block-wrapper"><div class="color-block-none"></div></div>'
+                             $trendCells += $trendHTML
+                                 }
+                                
+                                $html += "
+                                <td>No Cluster</td>
+                                <td>No Job</td>
+                                <td>$object</td>
+                                <td>No Type</td>
+                                <td>{0}</td>
+                                <td>{1}</td>
+                                <td>{2}</td>
+                                <td>{3}</td>
+                                <td>{4}</td>
+                                <td>{5}</td>
+                                <td>{6}</td>
+                                </tr>" -f $trendcells
+
+                                ####### populate Excel sheet
+                                                if($job.isActive -ne $false ){  #3
+                                                        $sheet.Cells.Item($rownum,1) = ''
+                                                        $sheet.Cells.Item($rownum,2) = ''
+                                                        $sheet.Cells.Item($rownum,3) = $object
+                                                        $sheet.Cells.Item($rownum,4) = ''
+                                                        $cell = 5
+                                                        1..7| foreach {
+                                                        $sheet.Cells.Item($rownum,$cell) = ''
+                                                        $cell += 1 }
+                                                        $rownum += 1
+                                                        }
+                                                  
+                                                    ################end of excel sheet population
+
+                                              }elseif($last14days){
+                                1..14| foreach {
+                             $trendHTML = '<div class="color-block-wrapper"><div class="color-block-none"></div></div>'
+                             $trendCells += $trendHTML
+                                 }
+
+                                $html += "
+                                <td>No Cluster</td>
+                                <td>No Job</td>
+                                <td>$object</td>
+                                <td>No Type</td>
+                                <td>{0}</td>
+                                <td>{1}</td>
+                                <td>{2}</td>
+                                <td>{3}</td>
+                                <td>{4}</td>
+                                <td>{5}</td>
+                                <td>{6}</td>
+                                <td>{7}</td>
+                                <td>{8}</td>
+                                <td>{9}</td>
+                                <td>{10}</td>
+                                <td>{11}</td>
+                                <td>{12}</td>
+                                <td>{13}</td>
+                                </tr>" -f $trendCells
+                                                }
+                                                }
+
+                                                
+                                        }
+
+                                             
+###############################################################################
 
 #######original#############3
 # authenticate
@@ -583,4 +734,13 @@ if($smtpServer -and $sendTo -and $sendFrom){
         Send-MailMessage -From $sendFrom -To $toaddr -SmtpServer $smtpServer -Port $smtpPort -Subject $title -BodyAsHtml $html -Attachments $fileName -WarningAction SilentlyContinue
     }
 }
-"===========Completion Time  $(Get-Date -Format hh:mm) ========="
+"===========Completion Time  $(Get-Date -Format hh:mm) =========" 
+### final formatting and save
+$sheet.columns.autofit() | Out-Null
+$sheet.columns("Q").columnWidth = 100
+$sheet.columns("Q").wraptext = $True
+$sheet.usedRange.rows(1).Font.Bold = $True
+$excel.Visible = $true
+$workbook.SaveAs($xlsx,51) | Out-Null
+$workbook.close($false)
+$excel.Quit()
