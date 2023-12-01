@@ -1,0 +1,23 @@
+#include <Excel.au3>
+$xlSortOnValues = 0
+$xlPinYin = 1
+$sfilepath = @ScriptDir & "" & "test.xls"
+$oExcel = _ExcelBookOpen($sfilepath, 1)
+;$oExcel.rows("1:2").delete
+;$oExcel.Cells.Select
+;remove merged cell option
+;$oExcel.selection.MergeCells = False
+$oSheet = $oExcel.ActiveWorkbook.Worksheets("Sheet1")
+$oSheet.Sort.SortFields.Clear
+$oSheet.Sort.SortFields.Add($oSheet.Range("G:G"), $xlSortOnValues, $xlAscending)
+$oSheet.Sort.SortFields.Add($oSheet.Range("F:F"), $xlSortOnValues, $xlAscending)
+$oSheet.Sort.SortFields.Add($oSheet.Range("E:E"), $xlSortOnValues, $xlAscending)
+$oSheet.Sort.SortFields.Add($oSheet.Range("C:C"), $xlSortOnValues, $xlDescending)
+$oSheet.Sort.SortFields.Add($oSheet.Range("M:M"), $xlSortOnValues, $xlAscending)
+$oSheet.Sort.SetRange($oSheet.Range("A1:M1525"))
+$oSheet.Sort.Header = $xlYes
+$oSheet.Sort.MatchCase = False
+$oSheet.Sort.Orientation = $xlTopToBottom
+$oSheet.Sort.SortMethod = $xlPinYin
+$oSheet.Sort.Apply
+============================================================
