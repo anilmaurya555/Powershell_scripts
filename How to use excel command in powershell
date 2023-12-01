@@ -21,3 +21,4 @@ $oSheet.Sort.Orientation = $xlTopToBottom
 $oSheet.Sort.SortMethod = $xlPinYin
 $oSheet.Sort.Apply
 ============================================================
+$xls.Range("A1:I100").Sort($xls.Range("B2"), $xlDescending) >$null
