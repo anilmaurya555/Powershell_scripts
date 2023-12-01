@@ -1,24 +1,22 @@
-#include <Excel.au3>
-$xlSortOnValues = 0
-$xlPinYin = 1
-$sfilepath = @ScriptDir & "" & "test.xls"
-$oExcel = _ExcelBookOpen($sfilepath, 1)
-;$oExcel.rows("1:2").delete
-;$oExcel.Cells.Select
-;remove merged cell option
-;$oExcel.selection.MergeCells = False
-$oSheet = $oExcel.ActiveWorkbook.Worksheets("Sheet1")
-$oSheet.Sort.SortFields.Clear
-$oSheet.Sort.SortFields.Add($oSheet.Range("G:G"), $xlSortOnValues, $xlAscending)
-$oSheet.Sort.SortFields.Add($oSheet.Range("F:F"), $xlSortOnValues, $xlAscending)
-$oSheet.Sort.SortFields.Add($oSheet.Range("E:E"), $xlSortOnValues, $xlAscending)
-$oSheet.Sort.SortFields.Add($oSheet.Range("C:C"), $xlSortOnValues, $xlDescending)
-$oSheet.Sort.SortFields.Add($oSheet.Range("M:M"), $xlSortOnValues, $xlAscending)
-$oSheet.Sort.SetRange($oSheet.Range("A1:M1525"))
-$oSheet.Sort.Header = $xlYes
-$oSheet.Sort.MatchCase = False
-$oSheet.Sort.Orientation = $xlTopToBottom
-$oSheet.Sort.SortMethod = $xlPinYin
-$oSheet.Sort.Apply
-============================================================
-$xls.Range("A1:I100").Sort($xls.Range("B2"), $xlDescending) >$null
+# how to sort on 2 columns H & G with header on, sort by column G ascending, followed by column H descending
+$xlSortOnValues = $xlSortNormal   = 0
+$xlTopToBottom  = $xlSummaryBelow = 1
+$xlAscending    = 1
+$xlDescending   = 2
+$xlNo           = 2
+$xlYes          = 1
+
+$objWrkSht1 = $objWrkBk.Worksheets.item(1)
+$objWrkSht1.Select()
+$objRange       = $objWrkSht1.UsedRange
+$objRange1      = $objWrkSht1.range("G1")
+$objRange2      = $objWrkSht1.range("H1")
+$objWrkSht1.Sort.SortFields.Clear()
+
+[void] $objWrkSht1.Sort.SortFields.Add($objRange1,$xlSortOnValues,$xlAscending,$xlSortNormal)
+[void] $objWrkSht1.Sort.SortFields.Add($objRange2,$xlSortOnValues,$xlDescending,$xlSortNormal)
+
+$objWrkSht1.sort.setRange($objRange)  # define the range to sort
+$objWrkSht1.sort.header = $xlYes      # range has a header
+$objWrkSht1.sort.orientation = $xlTopToBottom
+$objWrkSht1.sort.apply()
